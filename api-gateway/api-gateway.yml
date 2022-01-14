@@ -1,0 +1,74 @@
+server:
+  port: 8081
+security-constraints:
+  open-uri:
+    - /actuator/**
+    - /api/v1/*/api-doc
+    - /webjars/swagger-ui/**
+    - /swagger-ui**
+    - /v3/api-docs/**
+spring:
+  cloud:
+    gateway:
+      forwarded:
+        enabled: true
+      x-forwarded:
+        enabled: true
+        forEnabled: true
+        protoEnabled: true
+        portEnabled: true
+        prefixEnabled: true
+      default-filters:
+        - TokenRelay
+      discovery:
+        locator:
+          enabled: false
+      routes:
+        - id: userProfilesPrincipal
+          uri: http://localhost:8095
+          predicates:
+            - Path=/api/v1/profiles/me, /api/v1/profiles/me/pets, /api/v1/service/**
+            - Method=GET,PUT,POST,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
+        - id: openapi
+          uri: http://localhost:8081
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /api/v1//$\{path}/api-doc
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            provider: keycloak
+            client-id: web
+            authorization-grant-type: authorization_code
+            redirect-uri: ${keycloak-client.server-url}/login/oauth2/code/keycloak
+            scope: openid
+        provider:
+          keycloak:
+            authorization-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/auth
+            token-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/token
+            user-info-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/userinfo
+            jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
+            user-name-attribute: name
+            user-info-authentication-method: header
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
+keycloak-client:
+  server-url: https://auth-dev.agenadev.com/auth
+  realm: diar
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+springdoc:
+  packagesToScan: com.agenatech
