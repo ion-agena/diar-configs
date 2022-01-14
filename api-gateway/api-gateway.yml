@@ -24,7 +24,7 @@ spring:
         locator:
           enabled: false
       routes:
-        - id: userProfilesPrincipal
+        - id: profiles
           uri: http://localhost:8095
           predicates:
             - Path=/api/v1/profiles/me, /api/v1/profiles/me/pets, /api/v1/service/**

@@ -2,7 +2,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: profilesPrincipal
+        - id: profiles
           uri: http://profiles
           predicates:
             - Path=/api/v1/profiles/me
