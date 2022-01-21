@@ -15,5 +15,10 @@ spring:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/(?<path>.*), /api/v1//$\{path}/api-doc
+        - id: analyzeSentiment
+          uri: http://ai-management
+          predicates:
+            - Path=/api/v1/analyzeSentiment
+            - Method=POST
 keycloak-client:
   server-url: https://auth-dev.agenadev.com/auth
