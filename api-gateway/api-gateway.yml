@@ -38,11 +38,11 @@ spring:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/(?<path>.*), /api/v1//$\{path}/api-doc
-        - id: analyzeSentiment
+        - id: ai-management
           uri: http://localhost:9090
           predicates:
-            - Path=/api/v1/analyzeSentiment
-            - Method=POST
+            - Path=/api/v1/emotions,/api/v1/sleep
+            - Method=GET,POST
   security:
     oauth2:
       client:
