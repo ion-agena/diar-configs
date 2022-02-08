@@ -18,7 +18,7 @@ spring:
         - id: ai-management
           uri: http://ai-management:9090
           predicates:
-            - Path=/api/v1/emotions,/api/v1/sleep
+            - Path=/api/v1/emotions/**,/api/v1/sleep,/api/v1/sleep/**
             - Method=GET,POST
 keycloak-client:
   server-url: https://auth-dev.agenadev.com/auth
