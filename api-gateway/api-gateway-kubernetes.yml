@@ -22,7 +22,7 @@ spring:
         - id: ai-management
           uri: http://ai-management:9090
           predicates:
-            - Path=/api/v1/emotions/**,/api/v1/sleep,/api/v1/sleep/**
+            - Path=/api/v1/emotions/**,/api/v1/sleep,/api/v1/sleep/**,/api/v1/ai-managemen/api-doc
             - Method=GET,POST
         - id: gamification-manager
           uri: http://gamification-manager
