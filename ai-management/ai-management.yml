@@ -1,0 +1,38 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: ai-management
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ai-management?ssl=false
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update # use validate in production
+  flyway:
+    enabled: false
+    validate-on-migrate: true
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    time-zone: UTC
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+logging:
+  level:
+    root: DEBUG
+amazon:
+  aws:
+    accesskey: ${AIM_AWS_ACCESS_KEY_ID:test}
+    secretkey: ${AIM_AWS_SECRET_ACCESS_KEY:test}
+springdoc.api-docs.path: /api/v1/ai-management/api-doc
+ai.physiology.url: http://physiology.servebeer.com/
+ai.questionnaire.url: http://questionnaire.ai.diar.tech/
