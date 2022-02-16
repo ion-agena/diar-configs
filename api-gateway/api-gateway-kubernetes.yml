@@ -31,7 +31,7 @@ spring:
         - id: keycloak-admin-adapter
           uri: http://keycloak-admin-adapter
           predicates:
-            - Path=/api/v1/sso/**, /api/v1/keycloak-admin-adapter/api-doc
+            - Path=/api/v1/sso/**
           filters:
             - AddPrincipalToPathFilter
           metadata:
