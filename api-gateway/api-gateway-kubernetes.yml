@@ -32,5 +32,11 @@ spring:
           uri: http://keycloak-admin-adapter
           predicates:
             - Path=/api/v1/sso/**, /api/v1/keycloak-admin-adapter/api-doc
+          filters:
+            - AddPrincipalToPathFilter
+          metadata:
+            auth-roles:
+              - diar-admin
+              - diar-therapist
 keycloak-client:
   server-url: https://auth-dev.agenadev.com/auth
