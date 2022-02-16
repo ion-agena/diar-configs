@@ -36,8 +36,8 @@ spring:
             - AddPrincipalToPathFilter
           metadata:
             auth-roles:
-              - diar-admin
-              - diar-therapist
+              - admin-diar
+              - therapist-diar
         - id: keycloak-admin-adapter-openAPI
           uri: http://keycloak-admin-adapter
           predicates:
