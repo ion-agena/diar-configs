@@ -38,5 +38,9 @@ spring:
             auth-roles:
               - diar-admin
               - diar-therapist
+        - id: keycloak-admin-adapter-openAPI
+            uri: http://keycloak-admin-adapter
+            predicates:
+              - Path=/api/v1/keycloak-admin-adapter/api-doc
 keycloak-client:
   server-url: https://auth-dev.agenadev.com/auth
