@@ -28,5 +28,9 @@ spring:
           uri: http://gamification-manager
           predicates:
             - Path=/api/v1/achievements/**, /api/v1/cards/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/tasks/**, /api/v1/gamification-manager/**
+        - id: keycloak-admin-adapter
+          uri: http://keycloak-admin-adapter
+          predicates:
+            - Path=/api/v1/sso/**, /api/v1/keycloak-admin-adapter/api-doc
 keycloak-client:
   server-url: https://auth-dev.agenadev.com/auth
