@@ -30,6 +30,9 @@ springdoc.api-docs.path: /api/v1/gamification-manager/api-doc
 logging:
   level:
     com.agenatech: DEBUG
+health:
+  config:
+    enabled: false
 
 
 

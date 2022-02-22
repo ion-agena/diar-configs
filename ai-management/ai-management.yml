@@ -36,3 +36,6 @@ amazon:
 springdoc.api-docs.path: /api/v1/ai-management/api-doc
 ai.physiology.url: http://physiology.servebeer.com/
 ai.questionnaire.url: http://questionnaire.ai.diar.tech/
+health:
+  config:
+    enabled: false

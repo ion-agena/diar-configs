@@ -82,3 +82,6 @@ logging:
     reactor.netty.http.client: DEBUG
 springdoc:
   packagesToScan: com.agenatech
+health:
+  config:
+    enabled: false
