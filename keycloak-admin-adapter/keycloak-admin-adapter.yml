@@ -12,13 +12,6 @@ keycloak-client:
 profiles:
   url: http://localhost:8989
   path: api/v1/profiles
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 10000
-        readTimeout: 10000
-        loggerLevel: full
 springdoc.api-docs.path: /api/v1/keycloak-admin-adapter/api-doc
 logging:
   level:
