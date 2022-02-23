@@ -33,7 +33,7 @@ logging:
     com.agenatech: DEBUG
 health:
   config:
-    enabled: false
+    enabled: true
 
 
 
