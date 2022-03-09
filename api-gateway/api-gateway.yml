@@ -47,9 +47,9 @@ spring:
             - Path=/api/v1/emotions/**,/api/v1/sleep,/api/v1/sleep/**
             - Method=GET,POST
         - id: gamification-manager
-            uri: http://localhost:8080
-            predicates:
-              - Path=/api/v1/achievements/**, /api/v1/cards/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/tasks/**, /api/v1/gamification-manager/**
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/achievements/**, /api/v1/cards/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/tasks/**, /api/v1/gamification-manager/**
         - id: descriptions
           uri: http://localhost:8080
           predicates:
@@ -58,19 +58,19 @@ spring:
           filters:
             - RewritePath=/api/v1/(?<entity>.*)/(?<path>.*)/description, /api/v1/description//$\{path}/
         - id: keycloak-admin-adapter
-            uri: http://localhost:8080
-            predicates:
-              - Path=/api/v1/sso/**
-            filters:
-              - AddPrincipalToPathFilter
-            metadata:
-              auth-roles:
-                - admin-diar
-                - therapist-diar
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/sso/**
+          filters:
+            - AddPrincipalToPathFilter
+          metadata:
+            auth-roles:
+              - admin-diar
+              - therapist-diar
         - id: keycloak-admin-adapter-openAPI
-            uri: http://localhost:8080
-            predicates:
-              - Path=/api/v1/keycloak-admin-adapter/api-doc
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/keycloak-admin-adapter/api-doc
   security:
     oauth2:
       client:
