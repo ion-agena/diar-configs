@@ -55,6 +55,8 @@ spring:
           predicates:
             - Path=/api/v1/*/*/description
             - Method=GET,PUT,PATCH
+          filters:
+            - RewritePath=/api/v1/(?<entity>.*)/(?<path>.*)/description, /api/v1/description//$\{path}/
         - id: keycloak-admin-adapter
             uri: http://localhost:8080
             predicates:
