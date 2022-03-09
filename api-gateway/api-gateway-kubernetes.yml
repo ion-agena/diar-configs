@@ -49,5 +49,9 @@ spring:
           uri: http://keycloak-admin-adapter
           predicates:
             - Path=/api/v1/keycloak-admin-adapter/api-doc
+        - id: multimedia
+          uri: http://multimedia-manager
+          predicates:
+            - Path=/api/v1/multimedia, /api/v1/multimedia/**, /api/v1/multimedia-manager/**
 keycloak-client:
   server-url: https://auth-dev.agenadev.com/auth
