@@ -28,6 +28,11 @@ spring:
           uri: http://gamification-manager
           predicates:
             - Path=/api/v1/achievements/**, /api/v1/cards/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/tasks/**, /api/v1/gamification-manager/**
+        - id: descriptions
+          uri: http://gamification-manager
+          predicates:
+            - Path=/api/v1/*/*/description
+            - Method=GET,PUT,PATCH
         - id: keycloak-admin-adapter
           uri: http://keycloak-admin-adapter
           predicates:

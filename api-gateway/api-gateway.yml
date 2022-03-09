@@ -24,13 +24,17 @@ spring:
         locator:
           enabled: false
       routes:
+        - id: profilesPrincipal
+          uri: http://localhost:8095
+          predicates:
+            - Path=/api/v1/profiles/me
+            - Method=GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
         - id: profiles
           uri: http://localhost:8095
           predicates:
-            - Path=/api/v1/profiles/me, /api/v1/profiles/me/pets, /api/v1/service/**
-            - Method=GET,PUT,POST,PATCH,DELETE
-          filters:
-            - AddPrincipalToPathFilter
+            - Path=/api/v1/profiles/*/*, /api/v1/profiles/api-doc
         - id: openapi
           uri: http://localhost:8081
           predicates:
@@ -42,11 +46,29 @@ spring:
           predicates:
             - Path=/api/v1/emotions/**,/api/v1/sleep,/api/v1/sleep/**
             - Method=GET,POST
-        - id: mental-health-backend
-          uri: http://localhost:8000
+        - id: gamification-manager
+            uri: http://localhost:8080
+            predicates:
+              - Path=/api/v1/achievements/**, /api/v1/cards/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/tasks/**, /api/v1/gamification-manager/**
+        - id: descriptions
+          uri: http://localhost:8080
           predicates:
-            - Path=/api/**
-            - Method=GET,PUT,POST,PATCH,DELETE
+            - Path=/api/v1/*/*/description
+            - Method=GET,PUT,PATCH
+        - id: keycloak-admin-adapter
+            uri: http://localhost:8080
+            predicates:
+              - Path=/api/v1/sso/**
+            filters:
+              - AddPrincipalToPathFilter
+            metadata:
+              auth-roles:
+                - admin-diar
+                - therapist-diar
+        - id: keycloak-admin-adapter-openAPI
+            uri: http://localhost:8080
+            predicates:
+              - Path=/api/v1/keycloak-admin-adapter/api-doc
   security:
     oauth2:
       client:
