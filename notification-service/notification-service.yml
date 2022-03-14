@@ -20,7 +20,6 @@ logging:
   level:
     root: DEBUG
 springdoc.api-docs.path: /api/v1/notifications/api-doc
-firebase.credentials.json: ${FIREBASE_CREDENTIALS_JSON}
 health:
   config:
     enabled: false
