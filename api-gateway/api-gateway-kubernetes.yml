@@ -72,6 +72,20 @@ spring:
           uri: http://keycloak-admin-adapter
           predicates:
             - Path=/api/v1/keycloak-admin-adapter/api-doc
+        - id: achievements-admin
+          uri: http://achievements-manager
+          predicates:
+            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**
+            - Method=POST,PATCH,DELETE
+          metadata:
+            auth-roles:
+              - admin-diar
+              - therapist-diar
+        - id: achievements
+          uri: http://achievements-manager
+          predicates:
+            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-manager/api-doc
+            - Method=GET
         - id: multimedia
           uri: http://multimedia-manager
           predicates:
