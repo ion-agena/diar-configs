@@ -81,7 +81,7 @@ spring:
             auth-roles:
               - admin-diar
               - therapist-diar
-        - id: achievements
+        - id: achievements-manager
           uri: http://achievements-manager
           predicates:
             - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-manager/api-doc
