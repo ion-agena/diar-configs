@@ -34,6 +34,8 @@ logging:
 health:
   config:
     enabled: false
+sentry:
+  dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
 
 
 

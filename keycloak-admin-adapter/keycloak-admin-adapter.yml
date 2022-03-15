@@ -10,6 +10,9 @@ keycloak-client:
 profiles:
   url: http://localhost:8989
   path: api/v1/profiles
+achievements:
+  url: http://localhost:8080
+  schedule-path: api/v1/commands/{userId}/schedule-achievements
 springdoc.api-docs.path: /api/v1/keycloak-admin-adapter/api-doc
 logging:
   level:
@@ -18,3 +21,5 @@ logging:
 health:
   config:
     enabled: false
+sentry:
+  dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927

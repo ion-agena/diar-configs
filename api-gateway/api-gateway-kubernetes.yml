@@ -35,7 +35,7 @@ spring:
         - id: gamification-manager-therapist
           uri: http://gamification-manager
           predicates:
-            - Path=/api/v1/achievements/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/commands/therapist/**
+            - Path=/api/v1/posts/**, /api/v1/steps/**, /api/v1/therapist/**
             - Method=POST,PATCH,DELETE
           metadata:
             auth-roles:
@@ -44,7 +44,7 @@ spring:
         - id: gamification-manager
           uri: http://gamification-manager
           predicates:
-            - Path=/api/v1/achievements/**, /api/v1/cards/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/tasks/**, /api/v1/categories/**, /api/v1/gamification-manager/**
+            - Path=/api/v1/cards/**, /api/v1/posts/**, /api/v1/tasks/**, /api/v1/categories/**, /api/v1/gamification-manager/**
             - Method=GET
         - id: gamification-manager-commands-client
           uri: http://gamification-manager
@@ -75,7 +75,7 @@ spring:
         - id: achievements-admin
           uri: http://achievements-manager
           predicates:
-            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**
+            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/commands/*/set-client-step/**
             - Method=POST,PATCH,DELETE
           metadata:
             auth-roles:
@@ -84,7 +84,7 @@ spring:
         - id: achievements-manager
           uri: http://achievements-manager
           predicates:
-            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-manager/api-doc
+            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/steps/**, /api/v1/achievements-manager/api-doc
             - Method=GET
         - id: multimedia
           uri: http://multimedia-manager
