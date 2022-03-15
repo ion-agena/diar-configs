@@ -1,3 +1,5 @@
+server:
+  port: 8083
 auth-server:
   url: ${keycloak-client.server-url}
   admin-secret: '{cipher}b926bd2a4635344e88e5f5e700c3821dc7a268a571d149f0a062a0e79611017bab2aee59ea9498d9f12fba58c26649cf3c12ce563d4a02cd026eb2603449f096'
