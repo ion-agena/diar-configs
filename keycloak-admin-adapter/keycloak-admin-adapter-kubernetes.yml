@@ -5,4 +5,4 @@ profiles:
   path: api/v1/profiles
 achievements:
   url: http://achievements-manager
-  schedule-path: api/v1/commands/{userId}/schedule-achievements
+  schedule-path: api/v1/commands

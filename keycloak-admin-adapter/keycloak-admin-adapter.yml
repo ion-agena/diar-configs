@@ -14,7 +14,7 @@ profiles:
   path: api/v1/profiles
 achievements:
   url: http://localhost:8080
-  schedule-path: api/v1/commands/{userId}/schedule-achievements
+  schedule-path: api/v1/commands
 springdoc.api-docs.path: /api/v1/keycloak-admin-adapter/api-doc
 logging:
   level:
