@@ -1,0 +1,8 @@
+server:
+  port: 8080
+achievements:
+  url: http://achievements-manager
+  run-scheduler-path: api/v1/commands/scheduler-run
+  cron: 0 0 8 * * *
+
+

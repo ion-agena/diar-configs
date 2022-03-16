@@ -1,0 +1,14 @@
+server:
+  port: 8091
+achievements:
+  url: http://localhost:8080
+  run-scheduler-path: api/v1/commands/scheduler-run
+  cron: 0 0 8 * * *
+logging:
+  level:
+    com.agenatech: DEBUG
+feign.client.config.default.loggerLevel: full
+health:
+  config:
+    enabled: false
+
