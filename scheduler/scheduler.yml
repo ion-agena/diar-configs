@@ -11,4 +11,9 @@ feign.client.config.default.loggerLevel: full
 health:
   config:
     enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
