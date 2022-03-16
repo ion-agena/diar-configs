@@ -86,11 +86,6 @@ spring:
           predicates:
             - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/steps/**, /api/v1/achievements-manager/api-doc
             - Method=GET
-        - id: achievements-scheduler
-          uri: http://achievements-manager
-          predicates:
-            - Path=/api/v1/commands/scheduler-run
-            - Method=POST
         - id: multimedia
           uri: http://multimedia-manager
           predicates:
