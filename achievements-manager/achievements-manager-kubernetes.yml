@@ -1,4 +1,6 @@
 spring:
+  kafka:
+    enabled: false
   datasource:
     url: jdbc:postgresql://agenatech-2.cbxabex1bwiq.eu-north-1.rds.amazonaws.com:5432/achievements-manager?ssl=false
     username: postgres

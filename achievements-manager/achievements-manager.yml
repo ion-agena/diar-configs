@@ -15,6 +15,18 @@ spring:
     hibernate:
       ddl-auto: update
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  kafka:
+    enabled: true
+    consumer:
+      bootstrap-servers: 127.0.0.1:56690
+      group-id: profiles-achievements
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      profiles-achievements-topic.name: user-profile-create
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.type.mapping: profile:com.agenatech.achievementsmanager.client.kafka.payload.UserProfile
 management:
   endpoints:
     web:
