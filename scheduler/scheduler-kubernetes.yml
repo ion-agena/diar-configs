@@ -4,5 +4,8 @@ achievements:
   url: http://achievements-manager
   run-scheduler-path: api/v1/commands/scheduler-run
   cron: 0 0 8 * * *
-
+posts:
+  url: http://gamification-manager
+  run-scheduler-path: api/v1/commands/activate-daily-posts
+  cron: 0 0 6 * * *
 
