@@ -21,6 +21,19 @@ spring:
     hibernate:
       ddl-auto: update
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  kafka:
+    enabled: false
+    producer:
+      bootstrap-servers: localhost:52331
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.type.mapping: reply:com.agenatech.gamificationmanager.model.ExecutedCardUserRelation
+    topic:
+      name: card-reply
+      replicas: 1
+      partitions: 2
+      admin-client: localhost:52331
 management:
   endpoints:
     web:
