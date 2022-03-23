@@ -27,6 +27,7 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.type.mapping: profile:com.agenatech.achievementsmanager.client.kafka.payload.UserProfile
+achievements.chunk.size: 100
 management:
   endpoints:
     web:
