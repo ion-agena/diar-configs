@@ -1,6 +1,23 @@
 spring:
   kafka:
-    enabled: false
+    enabled: true
+    consumer:
+      group-id: profiles-achievements
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      profiles-achievements-topic.name: user-profile-create
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.type.mapping: profile:com.agenatech.achievementsmanager.client.kafka.payload.UserProfile
+        sasl:
+          mechanism: PLAIN
+          jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='3S7RWXX65P6OKXSU'   '{cipher}c3009b1ad74e89cc0d0ec312fa0cb40aea6447de023113f287547a74992dd0a77a1f058c9e605e43e105e2034a15f1c4311cf081d6c90b917b031022cf973fd57a705adfcad124abd3782dcf936bf07f3f9317243404d8dd763e7f56097f7772';
+        bootstrap.servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
+        security.protocol: SASL_SSL
+        session.timeout.ms: 45000
+        basic.auth.credentials.source: USER_INFO
+        basic.auth.user.info: '{cipher}c23af0042cd1d44cf552a2e92df2b90dac911941060d41f48e02bf04acbf01bd8a13ec131b06096dd4509193f29e99345cca2503e454a550ba84c136ecfb54d4b40f426cfe248fe7cf4e9117836c0fb8de0ff2a63b69888b03df78103711716aa41b82404897b574a5686f9e8c19949b'
   datasource:
     url: jdbc:postgresql://agenatech-2.cbxabex1bwiq.eu-north-1.rds.amazonaws.com:5432/achievements-manager?ssl=false
     username: postgres
