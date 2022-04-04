@@ -12,7 +12,7 @@ spring:
         spring.json.type.mapping: profile:com.agenatech.achievementsmanager.client.kafka.payload.UserProfile
         sasl:
           mechanism: PLAIN
-          jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='3S7RWXX65P6OKXSU'   '{cipher}c3009b1ad74e89cc0d0ec312fa0cb40aea6447de023113f287547a74992dd0a77a1f058c9e605e43e105e2034a15f1c4311cf081d6c90b917b031022cf973fd57a705adfcad124abd3782dcf936bf07f3f9317243404d8dd763e7f56097f7772';
+          jaas.config: '{cipher}947f16f519ca2cfe6d84003c256fbbd580aaf4f93895a35b311ff1cdae056cc52bcd4d85290cecba158a696421a7fc2f9a04764c8575a84a358172d3fdd9b1bdc1d52f786ad81a1b265c6d69dc751ebd1dce9ee467b9ad7997699fccda871d79a66cc908414de2c8d8fef2ddc38a80fbffccc2bec8760a8b3d53e06ef1be13f9aabf5c1394f0f02c4c7b6a19d9743b1825143e1c8b60b809712f33ce13acfc0ba7d7b8b6efe908bd9c1211c198b736905630f9b102cbff3f7196ef74534b902d'
         bootstrap.servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
         security.protocol: SASL_SSL
         session.timeout.ms: 45000
