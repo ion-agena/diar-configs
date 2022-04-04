@@ -25,6 +25,13 @@ spring:
           predicates:
             - Path=/api/v1/emotions/**,/api/v1/sleep,/api/v1/sleep/**,/api/v1/ai-management/api-doc
             - Method=GET,POST
+        - id: health-data
+          uri: http://health-data
+          predicates:
+            - Path=/api/v1/*/*/hrv, /api/v1/*/*/steps
+            - Method=GET,POST
+          filters:
+            - AddPrincipalToPathFilters
         - id: gamification-manager-principal
           uri: http://gamification-manager
           predicates:
