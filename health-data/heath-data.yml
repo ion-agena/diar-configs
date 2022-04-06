@@ -1,0 +1,35 @@
+server:
+  port: 9085
+spring:
+  application:
+    name: health-data
+  datasource:
+    url: jdbc:postgresql://localhost:5432/health-data?ssl=false
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update # use validate in production
+  flyway:
+    enabled: false
+    validate-on-migrate: true
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    time-zone: UTC
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
+        loggerLevel: basic
+logging:
+  level:
+    root: DEBUG
+springdoc.api-docs.path: /api/v1/health-data/api-doc
+health:
+  config:
+    enabled: false
