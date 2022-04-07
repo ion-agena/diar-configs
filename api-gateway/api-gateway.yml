@@ -7,6 +7,12 @@ security-constraints:
     - /webjars/swagger-ui/**
     - /swagger-ui**
     - /v3/api-docs/**
+cors:
+  allowedOrigins: "*"
+  allowedMethods: "*"
+  allowedHeaders: "*"
+  allowedCredentials: true
+  maxAge: "3600"
 spring:
   cloud:
     gateway:
