@@ -31,7 +31,7 @@ spring:
             - Path=/api/v1/*/*/hrv, /api/v1/*/*/steps
             - Method=GET,POST
           filters:
-            - AddPrincipalToPathFilters
+            - AddPrincipalToPathFilter
         - id: gamification-manager-principal
           uri: http://gamification-manager
           predicates:
