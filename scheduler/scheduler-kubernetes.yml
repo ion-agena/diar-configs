@@ -7,5 +7,6 @@ achievements:
 posts:
   url: http://gamification-manager
   run-scheduler-path: api/v1/commands/activate-daily-posts
+  run-expired-posts-path: api/v1/commands/deactivate-daily-posts
   cron: 0 0 6 * * *
 
