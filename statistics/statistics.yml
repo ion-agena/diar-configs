@@ -1,8 +1,6 @@
 server:
   port: 8078
-  connection-timeout: 5s
 spring:
-  data.rest.base-path: api/v1
   datasource:
     url: jdbc:postgresql://localhost:5432/statistics-manager?ssl=false
     username: user
