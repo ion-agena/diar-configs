@@ -20,5 +20,5 @@ spring:
         spring.json.type.mapping: reply:com.agenatech.gamificationmanager.model.ExecutedCardUserRelation
     topic:
       name: card-reply
-        replicas: 2
-        partitions: 3
+      replicas: 2
+      partitions: 3
