@@ -36,11 +36,11 @@ spring:
         spring.json.type.mapping: profile:com.agenatech.solutions.profiles.model.UserProfile
     topic:
       name: user-profile-create
-      replicas: 1
+      replicas: 3
       partitions: 3
     step.topic:
       name: step-update
-      replicas: 1
+      replicas: 3
       partitions: 3
 
 management:
