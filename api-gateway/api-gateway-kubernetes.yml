@@ -28,7 +28,7 @@ spring:
         - id: health-data
           uri: http://health-data
           predicates:
-            - Path=/api/v1/*/*/hrv, /api/v1/*/*/steps
+            - Path=/api/v1/users/me/hrv, /api/v1/users/me/steps, /api/v1/health-data/api-doc
             - Method=GET,POST
           filters:
             - AddPrincipalToPathFilter
