@@ -40,7 +40,7 @@ spring:
       partitions: 3
     step.topic:
       name: step-update
-      replicas: 2
+      replicas: 1
       partitions: 3
 
 management:
