@@ -38,6 +38,10 @@ spring:
       name: user-profile-create
       replicas: 1
       partitions: 3
+    step.topic:
+      name: step-update
+      replicas: 2
+      partitions: 3
 
 management:
   endpoints:

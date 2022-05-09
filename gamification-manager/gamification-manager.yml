@@ -34,9 +34,9 @@ spring:
         spring.json.type.mapping: reply:com.agenatech.gamificationmanager.model.ExecutedCardUserRelation
     topic:
       name: card-reply
-  #      replicas: 1
-  #      partitions: 3
-  #      admin-client: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
+      replicas: 2
+      partitions: 3
+
 management:
   endpoints:
     web:
