@@ -1,7 +1,7 @@
 server:
   forward-headers-strategy: framework
   port: 8989
-  connection-timeout: 5s
+#  connection-timeout: 5s
 spring:
   data.rest.base-path: api/v1
   datasource:
