@@ -1,9 +1,12 @@
 server:
   forward-headers-strategy: framework
   port: 8989
-#  connection-timeout: 5s
+  connection-timeout: 5s
+
 spring:
   data.rest.base-path: api/v1
+  cache:
+    type: redis
   datasource:
     url: jdbc:postgresql://localhost:5432/profiles?ssl=false
     username: user
@@ -17,6 +20,12 @@ spring:
     hibernate:
       ddl-auto: update
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      cache:
+        use_second_level_cache: true
+        factory_class: org.redisson.hibernate.RedissonRegionFactory
+        redisson:
+          fallback: true
+
   # Producer properties
   kafka:
     enabled: true
@@ -48,13 +57,17 @@ management:
     web:
       exposure:
         include: '*'
+
 springdoc.api-docs.path: /api/v1/profiles/api-doc
+
 logging:
   level:
     com.agenatech: DEBUG
+
 health:
   config:
     enabled: false
+
 sentry:
   dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
 
