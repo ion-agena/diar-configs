@@ -17,8 +17,7 @@ spring:
         generate_statistics: true
         cache:
           redisson:
-            fallback: true
-            config: redisson.yml
+            config: redisson-local.yml
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     show-sql: true
     hibernate:
