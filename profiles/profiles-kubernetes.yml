@@ -41,6 +41,8 @@ spring:
             config: redisson-k8s.yml
   redis:
     redisson:
-      file: redisson-k8s.yml
+      config: |
+        singleServerConfig:
+          address: "redis://agenatech.yle1ni.ng.0001.eun1.cache.amazonaws.com:6379"
 
 
