@@ -32,4 +32,11 @@ spring:
       maximum-pool-size: 5
       initial-pool-size: 1
       connection-timeout: 20000
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: true
+        cache:
+          redisson:
+            config: redisson-k8s.yml
 
