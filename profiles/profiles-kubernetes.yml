@@ -41,6 +41,6 @@ spring:
             config: redisson-k8s.yml
   redis:
     redisson:
-      config: redisson-k8s.yml
+      file: redisson-k8s.yml
 
 
