@@ -39,4 +39,8 @@ spring:
         cache:
           redisson:
             config: redisson-k8s.yml
+  redis:
+    redisson:
+      config: redisson-k8s.yml
+
 
