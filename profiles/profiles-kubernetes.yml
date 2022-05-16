@@ -39,6 +39,16 @@ spring:
         cache:
           redisson:
             config: redisson-k8s.yml
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      cache:
+        use_second_level_cache: true
+        factory_class: org.redisson.hibernate.RedissonRegionFactory
+        redisson:
+          fallback: true
   redis:
     ssl: true
     masterSlaveServersConfig:
