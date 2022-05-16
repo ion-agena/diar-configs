@@ -22,6 +22,7 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       executed-card-topic.name: card-reply
+      profile-deleted-topic.name: user-profile-delete
       properties:
         spring.json.trusted.packages: "*"
         spring.json.type.mapping: reply:com.agenatech.statistics.model.ExecutedCard
