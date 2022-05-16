@@ -46,6 +46,8 @@ spring:
           retryAttempts: 3
           retryInterval: 1500
           loadBalancer: !<org.redisson.connection.balancer.RoundRobinLoadBalancer> {}
+          sslProtocols:
+            - "TLSv1.3"
           masterAddress:
             "redis://agenatech.yle1ni.ng.0001.eun1.cache.amazonaws.com:6379"
           slaveAddresses:
