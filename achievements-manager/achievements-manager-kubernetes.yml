@@ -10,6 +10,7 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       profiles-achievements-topic.name: user-profile-create
       step-update-topic.name: step-update
+      profile-deleted-topic.name: user-profile-delete
       properties:
         spring.json.trusted.packages: "*"
         spring.json.type.mapping: profile:com.agenatech.achievementsmanager.client.kafka.payload.UserProfile
