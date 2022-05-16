@@ -46,6 +46,7 @@ spring:
           retryAttempts: 3
           retryInterval: 1500
           loadBalancer: !<org.redisson.connection.balancer.RoundRobinLoadBalancer> {}
+          ssl: true
           sslProtocols:
             - "TLSv1.3"
           masterAddress:
