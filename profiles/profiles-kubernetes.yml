@@ -36,9 +36,6 @@ spring:
     properties:
       hibernate:
         generate_statistics: true
-        cache:
-          redisson:
-            config: redisson-k8s.yml
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     show-sql: true
     hibernate:
