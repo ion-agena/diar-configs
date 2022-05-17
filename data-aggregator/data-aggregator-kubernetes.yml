@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+profiles:
+  url: http://profiles
+gamification-manager:
+  url: http://gamification-manager
+achievements-manager:
+  url: achievements-manager
