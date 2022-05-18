@@ -8,11 +8,15 @@ spring:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      executed-card-topic.name: card-reply
-      profile-deleted-topic.name: user-profile-delete
+      executed-card-topic:
+        name: card-reply
+        group-id: cards-execution-statistics
+      profile-deleted-topic:
+        name: user-profile-delete
+        group-id: statistics
       properties:
         spring.json.trusted.packages: "*"
-        spring.json.type.mapping: reply:com.agenatech.statistics.model.ExecutedCard
+        spring.json.type.mapping: reply:com.agenatech.statistics.model.ExecutedCard,profile:com.agenatech.statistics.model.UserProfile
         bootstrap.servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
         security.protocol: SSL
         session.timeout.ms: 45000
