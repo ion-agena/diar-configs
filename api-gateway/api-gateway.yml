@@ -1,5 +1,6 @@
 server:
   port: 8081
+
 security-constraints:
   open-uri:
     - /actuator/**
@@ -7,12 +8,14 @@ security-constraints:
     - /webjars/swagger-ui/**
     - /swagger-ui**
     - /v3/api-docs/**
+
 cors:
   allowedOrigins: "*"
   allowedMethods: "*"
   allowedHeaders: "*"
   allowedCredentials: true
   maxAge: "3600"
+
 spring:
   cloud:
     gateway:
@@ -111,17 +114,34 @@ spring:
 keycloak-client:
   server-url: https://auth-dev.agenadev.com/auth
   realm: diar
+
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
     reactor.netty.http.client: DEBUG
+
 springdoc:
-  packagesToScan: com.agenatech
+  packages-to-scan: com.agenatech
+  custom:
+    ignored-routes:
+      - achievements-admin
+      - achievements-manager
+      - statistics-admin
+      - profiles-principal
+      - gamification-manager-principal
+      - gamification-manager-admin
+      - gamification-manager-therapist
+      - gamification-manager-commands-client
+      - keycloak-admin-adapter-openAPI
+      - statistics-admin
+      - openapi
+      -
 health:
   config:
     enabled: false
