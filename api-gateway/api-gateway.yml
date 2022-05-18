@@ -141,7 +141,8 @@ springdoc:
       - keycloak-admin-adapter-openAPI
       - statistics-admin
       - openapi
-      -
+      - descriptions
+
 health:
   config:
     enabled: false
