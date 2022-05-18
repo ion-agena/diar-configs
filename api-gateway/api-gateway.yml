@@ -131,7 +131,6 @@ springdoc:
   custom:
     ignored-routes:
       - achievements-admin
-      - achievements-manager
       - statistics-admin
       - profiles-principal
       - gamification-manager-principal
