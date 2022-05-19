@@ -29,8 +29,7 @@ spring:
         factory_class: org.redisson.hibernate.RedissonRegionFactory
         redisson:
           fallback: true
-          expiration:
-            max_idle_time: 10000
+          entity.expiration.max_idle_time: 10000
 
   # Producer properties
   kafka:
