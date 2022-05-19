@@ -11,6 +11,19 @@ achievements-manager:
   url: http://localhost:8182
   path: api/v1/achievement-user/search/by-user
 
+spring:
+  cache:
+    type: redis
+    redis:
+      cache-null-values: false
+      time-to-live: 40000
+  redis:
+    #    ssl: true
+    redisson:
+      config: |
+        singleServerConfig:
+          address: "redis://localhost:6379"
+
 logging:
   level:
     com.house: DEBUG
