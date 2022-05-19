@@ -36,6 +36,9 @@ spring:
     properties:
       hibernate:
         generate_statistics: true
+        cache:
+          redisson:
+            entity.expiration.max_idle_time: 604800000
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     show-sql: true
     hibernate:
