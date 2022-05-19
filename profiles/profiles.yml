@@ -7,6 +7,8 @@ spring:
   data.rest.base-path: api/v1
   cache:
     type: redis
+    redis:
+      max-idle-time: 10000
   datasource:
     url: jdbc:postgresql://localhost:5432/profiles?ssl=false
     username: user
