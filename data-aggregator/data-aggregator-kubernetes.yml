@@ -13,7 +13,7 @@ spring:
     type: redis
     redis:
       cache-null-values: false
-      time-to-live: 43200
+      time-to-live: 43200000
   redis:
     ssl: true
     redisson:
