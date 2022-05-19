@@ -37,8 +37,7 @@ spring:
       hibernate:
         generate_statistics: true
         cache.redisson:
-          entity.expiration.max_idle_time: 20000
-#          entity.expiration.max_idle_time: 604800000
+          entity.expiration.max_idle_time: 604800000
 
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     show-sql: true
@@ -50,7 +49,6 @@ spring:
         factory_class: org.redisson.hibernate.RedissonRegionFactory
         redisson:
           fallback: true
-          #          entity.expiration.max_idle_time: 604800000
 
   redis:
     ssl: true
