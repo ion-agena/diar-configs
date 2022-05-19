@@ -49,6 +49,7 @@ spring:
         use_second_level_cache: true
         factory_class: org.redisson.hibernate.RedissonRegionFactory
         redisson:
+          entity.expiration.max_idle_time: 10000
           fallback: true
   redis:
     ssl: true
