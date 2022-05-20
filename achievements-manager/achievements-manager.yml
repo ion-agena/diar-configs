@@ -17,6 +17,15 @@ spring:
     hibernate:
       ddl-auto: update
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  cache:
+    type: redis
+    redis:
+      max-idle-time: 30000
+  redis:
+    redisson:
+      config: |
+        singleServerConfig:
+          address: "redis://localhost:6379"
   kafka:
     enabled: true
     consumer:
