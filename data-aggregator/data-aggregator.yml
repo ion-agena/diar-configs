@@ -1,5 +1,6 @@
 server:
   port: 8086
+  connection-timeout: 10s
 
 profiles:
   url: http://localhost:8989
