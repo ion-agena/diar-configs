@@ -16,14 +16,7 @@ spring:
       name: user-profile
       replicas: 2
       partitions: 3
-    step.topic:
-      name: step-update
-      replicas: 2
-      partitions: 3
-    delete.topic:
-      name: user-profile-delete
-      replicas: 2
-      partitions: 3
+
   datasource:
     url: jdbc:postgresql://agenatech.cbxabex1bwiq.eu-north-1.rds.amazonaws.com:5432/profiles-diar?ssl=false
     username: postgres

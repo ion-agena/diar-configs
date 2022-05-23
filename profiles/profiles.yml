@@ -52,14 +52,6 @@ spring:
       name: user-profile
       replicas: 3
       partitions: 3
-    step.topic:
-      name: step-update
-      replicas: 3
-      partitions: 3
-    delete.topic:
-      name: user-profile-delete
-      replicas: 3
-      partitions: 3
 
 management:
   endpoints:
