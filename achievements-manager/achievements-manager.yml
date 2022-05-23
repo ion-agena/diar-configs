@@ -33,7 +33,7 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       group-id: profiles-achievements
-      profiles-achievements-topic.name: user-profile-create
+      profiles-topic.name: user-profile
       step-update-topic.name: step-update
       profile-deleted-topic.name: user-profile-delete
       properties:
