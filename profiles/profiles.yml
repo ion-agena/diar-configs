@@ -49,7 +49,7 @@ spring:
       properties:
         spring.json.type.mapping: profile:com.agenatech.solutions.profiles.model.UserProfile
     topic:
-      name: user-profile-create
+      name: user-profile
       replicas: 3
       partitions: 3
     step.topic:
