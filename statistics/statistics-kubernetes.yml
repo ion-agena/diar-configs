@@ -11,7 +11,7 @@ spring:
       executed-card-topic:
         name: card-reply
         group-id: cards-execution-statistics
-      profile-deleted-topic:
+      profiles-topic:
         name: user-profile-delete
         group-id: statistics
       properties:

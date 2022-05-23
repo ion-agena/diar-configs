@@ -23,8 +23,8 @@ spring:
       executed-card-topic:
         name: card-reply
         group-id: cards-execution-statistics
-      profile-deleted-topic:
-        name: user-profile-delete
+      profiles-topic:
+        name: user-profile
         group-id: statistics
       properties:
         spring.json.trusted.packages: "*"
