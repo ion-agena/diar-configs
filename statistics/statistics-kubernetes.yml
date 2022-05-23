@@ -12,7 +12,7 @@ spring:
         name: card-reply
         group-id: cards-execution-statistics
       profiles-topic:
-        name: user-profile-delete
+        name: user-profile
         group-id: statistics
       properties:
         spring.json.trusted.packages: "*"
