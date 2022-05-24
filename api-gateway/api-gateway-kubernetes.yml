@@ -2,6 +2,16 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: profiles-therapist
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/profiles/me/set-client-step/**
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
+          metadata:
+            auth-roles:
+              - therapist-diar
         - id: profiles-principal
           uri: http://profiles
           predicates:
@@ -91,7 +101,7 @@ spring:
         - id: achievements-admin
           uri: http://achievements-manager
           predicates:
-            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-step, /api/v1/achievements-step/**, /api/v1/commands/*/set-client-step/**, /api/v1/commands/*/set-achievement/**
+            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-step, /api/v1/achievements-step/**, /api/v1/commands/*/set-achievement/**
             - Method=POST,PATCH,DELETE
           metadata:
             auth-roles:
