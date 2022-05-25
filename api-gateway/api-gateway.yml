@@ -138,7 +138,7 @@ springdoc:
       - gamification-manager-admin
       - gamification-manager-therapist
       - gamification-manager-commands-client
-      - keycloak-admin-adapter-openAPI
+      - keycloak-admin-adapter-therapist-admin
       - statistics-admin
       - openapi
       - descriptions

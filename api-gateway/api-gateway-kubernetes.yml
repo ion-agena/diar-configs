@@ -86,14 +86,17 @@ spring:
         - id: keycloak-admin-adapter
           uri: http://keycloak-admin-adapter
           predicates:
-            - Path=/api/v1/sso/accounts/me, /api/v1/sso/me/create-account-profile
+            - Path=/api/v1/sso/accounts/me, /api/v1/sso/me/create-account-profile, /api/v1/keycloak-admin-adapter/api-doc
           filters:
             - AddPrincipalToPathFilter
-        - id: keycloak-admin-adapter-openAPI
+        - id: keycloak-admin-adapter-therapist-admin
           uri: http://keycloak-admin-adapter
           predicates:
-            - Path=/api/v1/keycloak-admin-adapter/api-doc
-            - Method=GET
+            - Path=/api/v1/sso/**
+          metadata:
+            auth-roles:
+              - admin-diar
+              - therapist-diar
         - id: achievements-admin
           uri: http://achievements-manager
           predicates:
