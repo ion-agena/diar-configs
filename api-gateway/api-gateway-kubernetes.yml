@@ -94,6 +94,8 @@ spring:
           uri: http://keycloak-admin-adapter
           predicates:
             - Path=/api/v1/sso/**
+          filters:
+            - AddPrincipalToPathFilter
           metadata:
             auth-roles:
               - admin-diar
