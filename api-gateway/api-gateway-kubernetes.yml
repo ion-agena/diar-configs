@@ -93,7 +93,7 @@ spring:
         - id: keycloak-admin-adapter-therapist-admin
           uri: http://keycloak-admin-adapter
           predicates:
-            - Path=/api/v1/sso/me/create-account-profile, /api/v1/sso/accounts/**
+            - Path=/api/v1/sso/me/create-account-profile, /api/v1/sso/admin/accounts/**
           filters:
             - AddPrincipalToPathFilter
           metadata:
