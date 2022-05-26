@@ -111,6 +111,7 @@ spring:
             - Method=GET
         - id: statistics
           uri: http://statistics
+          order: 0
           predicates:
             - Path=/api/v1/statistics/presence/me/**, /api/v1/statistics/api-doc
             - Method=GET
@@ -118,6 +119,7 @@ spring:
             - AddPrincipalToPathFilter
         - id: statistics-admin
           uri: http://statistics
+          order: 1
           predicates:
             - Path=/api/v1/statistics/presence/**
             - Method=GET
