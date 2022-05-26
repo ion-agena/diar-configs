@@ -117,16 +117,17 @@ spring:
             - Method=GET
           filters:
             - AddPrincipalToPathFilter
-        - id: statistics-admin
-          uri: http://statistics
-          order: 1
-          predicates:
-            - Path=/api/v1/statistics/presence/**
-            - Method=GET
-          metadata:
-            auth-roles:
-              - admin-diar
-              - therapist-diar
+#            API GW security impl should be corrected
+#        - id: statistics-admin
+#          uri: http://statistics
+#          order: 1
+#          predicates:
+#            - Path=/api/v1/statistics/presence/**
+#            - Method=GET
+#          metadata:
+#            auth-roles:
+#              - admin-diar
+#              - therapist-diar
         - id: multimedia
           uri: http://multimedia-manager
           predicates:
