@@ -45,7 +45,7 @@ spring:
         - id: gamification-manager-principal
           uri: http://gamification-manager
           predicates:
-            - Path=/api/v1/therapist/me/**,/api/v1/commands/client/me/**
+            - Path=/api/v1/therapist/me/**,/api/v1/commands/client/**
             - Method=POST,GET
           filters:
             - AddPrincipalToPathFilter
