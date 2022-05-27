@@ -7,7 +7,7 @@ spring:
     consumer:
       group-id: cards-execution-statistics
       auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       executed-card-topic:
         name: card-reply
