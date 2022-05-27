@@ -1,5 +1,7 @@
 server:
   port: 8078
+  connection-timeout: 10s
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/statistics-manager?ssl=false
@@ -14,6 +16,24 @@ spring:
     hibernate:
       ddl-auto: update
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  cache:
+    type: redis
+    expiration:
+      daily-presense:
+        max-idle-time: 35000
+        ttl: 0
+      between-dates-presence:
+        max-idle-time: 30000
+        ttl: 0
+      by-year-presence:
+        max-idle-time: 20000
+        ttl: 0
+  redis:
+    redisson:
+      config: |
+        singleServerConfig:
+          address: "redis://localhost:6379"
+
   kafka:
     enabled: true
     consumer:
@@ -39,12 +59,16 @@ spring:
         basic.auth.user.info: '{cipher}c23af0042cd1d44cf552a2e92df2b90dac911941060d41f48e02bf04acbf01bd8a13ec131b06096dd4509193f29e99345cca2503e454a550ba84c136ecfb54d4b40f426cfe248fe7cf4e9117836c0fb8de0ff2a63b69888b03df78103711716aa41b82404897b574a5686f9e8c19949b'
 
 management.endpoints.web.exposure.include: '*'
+
 springdoc.api-docs.path: /api/v1/statistics/api-doc
+
 sentry:
   dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
+
 logging:
   level:
     com.agenatech: DEBUG
+
 health:
   config:
     enabled: false

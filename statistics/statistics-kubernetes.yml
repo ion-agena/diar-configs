@@ -1,5 +1,6 @@
 server:
   port: 8080
+
 spring:
   kafka:
     enabled: true
@@ -20,6 +21,7 @@ spring:
         bootstrap.servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
         security.protocol: SSL
         session.timeout.ms: 45000
+
   datasource:
     url: jdbc:postgresql://agenatech-2.cbxabex1bwiq.eu-north-1.rds.amazonaws.com:5432/statistics-manager?ssl=false
     username: postgres
@@ -28,3 +30,28 @@ spring:
       maximum-pool-size: 5
       initial-pool-size: 1
       connection-timeout: 20000
+
+  cache:
+    type: redis
+    expiration:
+      daily-presense:
+        max-idle-time: 86400000
+        ttl: 0
+      between-dates-presence:
+        max-idle-time: 30000
+        ttl: 0
+      by-year-presence:
+        max-idle-time: 604800000
+        ttl: 0
+  redis:
+    ssl: true
+    redisson:
+      config: |
+        masterSlaveServersConfig:
+          retryAttempts: 3
+          retryInterval: 1500
+          loadBalancer: !<org.redisson.connection.balancer.RoundRobinLoadBalancer> {}
+          masterAddress: "redis://agenatech.yle1ni.ng.0001.eun1.cache.amazonaws.com:6379"
+          slaveAddresses:
+            - "redis://agenatech-002.yle1ni.0001.eun1.cache.amazonaws.com:6379"
+            - "redis://agenatech-003.yle1ni.0001.eun1.cache.amazonaws.com:6379"
