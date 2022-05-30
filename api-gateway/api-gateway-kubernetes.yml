@@ -60,7 +60,7 @@ spring:
         - id: gamification-manager-therapist
           uri: http://gamification-manager
           predicates:
-            - Path=/api/v1/posts/**, /api/v1/steps/**
+            - Path=/api/v1/posts/**
             - Method=POST,PATCH,DELETE
           metadata:
             auth-roles:
