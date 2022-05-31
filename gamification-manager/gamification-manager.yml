@@ -31,7 +31,7 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.type.mapping: reply:com.agenatech.gamificationmanager.model.ExecutedCardUserRelation
+        spring.json.type.mapping: reply:com.agenatech.gamificationmanager.model.ExecutedCard
     topic:
       name: card-reply
       replicas: 2
