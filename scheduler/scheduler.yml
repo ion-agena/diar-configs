@@ -4,10 +4,14 @@ achievements:
   url: http://localhost:8080
   run-scheduler-path: api/v1/commands/scheduler-run
   cron: 0 0 8 * * *
-posts:
+gamification-mgr:
   url: http://localhost:8080
-  run-scheduler-path: api/v1/commands/activate-daily-posts
-  cron: 0 0 6 * * *
+  posts:
+    run-scheduler-path: api/v1/commands/activate-daily-posts
+    cron: 0 0 6 * * *
+  executions:
+    cleanup-path: /commands/clean-finished-execution-data
+    cron: 0 0 3 * * *
 logging:
   level:
     com.agenatech: DEBUG
