@@ -1,4 +1,4 @@
-server:
+`server:
   forward-headers-strategy: framework
   connection-timeout: 5s
 
@@ -22,7 +22,13 @@ spring:
     type: redis
     expiration:
       task-by-id:
-        max-idle-time: 30000
+        max-idle-time: 604800000
+        ttl: 0
+      tasks-by-category:
+        max-idle-time: 604800000
+        ttl: 0
+      cards-by-task:
+        max-idle-time: 604800000
         ttl: 0
 
   redis:
@@ -86,3 +92,4 @@ sentry:
 
 
 
+`
