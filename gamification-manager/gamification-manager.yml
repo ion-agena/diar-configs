@@ -1,4 +1,4 @@
-`server:
+server:
   forward-headers-strategy: framework
   connection-timeout: 5s
 
