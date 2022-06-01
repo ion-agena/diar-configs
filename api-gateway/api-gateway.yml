@@ -115,12 +115,6 @@ keycloak-client:
   server-url: https://auth-dev.agenadev.com/auth
   realm: diar
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
