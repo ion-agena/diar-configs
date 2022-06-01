@@ -1,6 +1,7 @@
 server:
   forward-headers-strategy: framework
   connection-timeout: 5s
+
 spring:
   data.rest.base-path: api/v1
   datasource:
@@ -16,6 +17,20 @@ spring:
     hibernate:
       ddl-auto: update
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+  cache:
+    type: redis
+    expiration:
+      task-by-id:
+        max-idle-time: 30000
+        ttl: 0
+
+  redis:
+    redisson:
+      config: |
+        singleServerConfig:
+          address: "redis://localhost:6379"
+
   kafka:
     enabled: true
     bootstrap-servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
