@@ -84,6 +84,7 @@ springdoc.api-docs.path: /api/v1/gamification-manager/api-doc
 logging:
   level:
     com.agenatech: DEBUG
+    org.springframework.cache: TRACE
 health:
   config:
     enabled: false

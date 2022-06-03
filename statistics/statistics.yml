@@ -68,6 +68,7 @@ sentry:
 logging:
   level:
     com.agenatech: DEBUG
+    org.springframework.cache: TRACE
 
 health:
   config:
