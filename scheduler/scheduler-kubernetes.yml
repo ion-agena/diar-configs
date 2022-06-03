@@ -13,4 +13,7 @@ gamification-mgr:
   executions:
     cleanup-path: /commands/clean-finished-execution-data
     cron: 0 0 3 * * *
+  clear-caches:
+    path: /commands/clean-daily-caches
+    cron: @midnight
 
