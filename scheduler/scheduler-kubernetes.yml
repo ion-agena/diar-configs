@@ -15,5 +15,5 @@ gamification-mgr:
     cron: 0 0 3 * * *
   clear-caches:
     path: /commands/clean-daily-caches
-    cron: @midnight
+#    cron: @midnight
 
