@@ -11,11 +11,20 @@ spring:
   cache:
     type: redis
     expiration:
-      task-by-id:
-        max-idle-time: 86400000
-        ttl: 0
-      tasks-by-category:
+      tasks-by-category-step:
         max-idle-time: 604800000
+        ttl: 0
+      recurring-tasks-by-step:
+        max-idle-time: 604800000
+        ttl: 0
+      tasks-executions-by-user-date:
+        max-idle-time: 0
+        ttl: 86400000
+      tasks-executions-by-user:
+        max-idle-time: 604800000
+        ttl: 0
+      step-description:
+        max-idle-time: 1210000000
         ttl: 0
       cards-by-task:
         max-idle-time: 604800000
