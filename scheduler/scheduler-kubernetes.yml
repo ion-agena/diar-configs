@@ -1,15 +1,12 @@
 server:
   port: 8080
+
 achievements:
   url: http://achievements-manager
   run-scheduler-path: api/v1/commands/scheduler-run
   cron: 0 0 6 * * *
 gamification-mgr:
   url: http://gamification-manager
-  posts:
-    run-scheduler-path: api/v1/commands/activate-daily-posts
-    run-expired-posts-path: api/v1/commands/deactivate-daily-posts
-    cron: 0 0 1 * * *
   executions:
     cleanup-path: /commands/clean-finished-execution-data
     cron: 0 0 3 * * *
