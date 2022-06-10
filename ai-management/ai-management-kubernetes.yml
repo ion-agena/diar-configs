@@ -8,4 +8,4 @@ spring:
       initial-pool-size: 1
       connection-timeout: 20000
   kafka:
-    bootstrap-servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094git push
+    bootstrap-servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
