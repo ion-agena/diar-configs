@@ -59,9 +59,9 @@ spring:
             - Path=/api/v1/emotions/**,/api/v1/sleep,/api/v1/sleep/**
             - Method=GET,POST
         - id: health-data
-          uri: http://health-data
+          uri: http://localhost:9085
           predicates:
-            - Path=/api/v1/*/*/hrv, /api/v1/*/*/steps
+            - Path=/api/v1/users/me/hrv, /api/v1/users/me/steps, /api/v1/health-data/api-doc
             - Method=GET,POST
           filters:
             - AddPrincipalToPathFilter
