@@ -14,8 +14,8 @@ spring:
       ddl-auto: update # use validate in production
   kafka:
     bootstrap-servers: localhost:9092
-    properties:
-      topic: card-reply
+    topic:
+      name: card-reply
     consumer:
       group-id: ai-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
