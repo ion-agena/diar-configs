@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://agenatech.cbxabex1bwiq.eu-north-1.rds.amazonaws.com:5432/gamification-manager?ssl=false
+    url: jdbc:postgresql://database-dev-1.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/gamification-manager?ssl=false
     username: postgres
-    password: '{cipher}d0a1612fe2e66a648757a4726cf577501f596b6f6816a7eaf055b87dc3dd030bbf263d97f3976c62f877b900af366c9e'
+    password: '{cipher}343c6565adc705290de2fc08085115b01920d8a9bc7bf5d745f64270d16f175e587ad17756561b5824053f6af8d71fac'
     hikari:
       maximum-pool-size: 5
       initial-pool-size: 1
