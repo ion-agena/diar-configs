@@ -40,7 +40,7 @@ feign:
         loggerLevel: basic
 logging:
   level:
-    root: DEBUG
+    root: INFO
 amazon:
   aws:
     accesskey: ${AIM_AWS_ACCESS_KEY_ID:test}

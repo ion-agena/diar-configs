@@ -90,7 +90,7 @@ management:
 springdoc.api-docs.path: /api/v1/gamification-manager/api-doc
 logging:
   level:
-    com.agenatech: DEBUG
+    com.agenatech: INFO
     org.springframework.cache: TRACE
 health:
   config:

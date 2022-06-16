@@ -18,7 +18,7 @@ spring:
     time-zone: UTC
 logging:
   level:
-    root: DEBUG
+    root: INFO
 springdoc.api-docs.path: /api/v1/notifications/api-doc
 health:
   config:

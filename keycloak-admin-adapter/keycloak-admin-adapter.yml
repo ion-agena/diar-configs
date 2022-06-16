@@ -17,8 +17,8 @@ profiles:
 springdoc.api-docs.path: /api/v1/keycloak-admin-adapter/api-doc
 logging:
   level:
-    com.agenatech: DEBUG
-    reactor.netty.http.client.HttpClient: DEBUG
+    com.agenatech: INFO
+    reactor.netty.http.client.HttpClient: INFO
 health:
   config:
     enabled: false

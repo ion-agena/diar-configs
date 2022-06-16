@@ -27,14 +27,14 @@ spring:
 
 logging:
   level:
-    com.house: DEBUG
+    com.house: INFO
 feign:
   client:
     config:
       default:
         connectTimeout: 10000
         readTimeout: 10000
-        loggerLevel: full
+        loggerLevel: BASIC
 
 springdoc.api-docs.path: /api/v1/data-aggregator/api-doc
 
