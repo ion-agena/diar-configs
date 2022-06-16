@@ -3,12 +3,12 @@ server:
 
 auth-server:
   url: ${keycloak-client.server-url}
-  admin-secret: '{cipher}b926bd2a4635344e88e5f5e700c3821dc7a268a571d149f0a062a0e79611017bab2aee59ea9498d9f12fba58c26649cf3c12ce563d4a02cd026eb2603449f096'
+  admin-secret: '{cipher}f0cafeeb21ba82de746da84036b8d2cac8de9e517181c72995d4d3bb9ede93ee39e016fe132908cbd8b9d14d13fa9e27e1efa69a680836734d5bbad0dc42eee5'
   cli-token-uri: auth/realms/master/protocol/openid-connect/token
   users-uri: auth/admin/realms/${keycloak-client.realm}/users
   email-actions-uri: auth/admin/realms/${keycloak-client.realm}/users/{id}/execute-actions-email
 keycloak-client:
-  server-url: https://auth-dev.agenadev.com
+  server-url: https://authentication-dev.thehousehealth.com
   realm: diar
 profiles:
   url: http://localhost:8989
