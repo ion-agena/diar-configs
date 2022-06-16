@@ -139,4 +139,4 @@ spring:
           filters:
             - AddPrincipalToPathFilter
 keycloak-client:
-  server-url: https://auth-dev.agenadev.com/auth
+  server-url: https://authentication-dev.thehousehealth.com/auth
