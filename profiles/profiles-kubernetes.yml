@@ -1,0 +1,60 @@
+server:
+  port: 8989
+spring:
+  kafka:
+    enabled: true
+    bootstrap-servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
+    properties:
+      security.protocol: SSL
+    producer:
+      bootstrap-servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.type.mapping: profile:com.agenatech.solutions.profiles.model.UserProfile
+    topic:
+      name: user-profile
+      replicas: 2
+      partitions: 3
+
+  datasource:
+    url: jdbc:postgresql://database-dev-1.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/profiles-diar?ssl=false
+    username: postgres
+    password: '{cipher}343c6565adc705290de2fc08085115b01920d8a9bc7bf5d745f64270d16f175e587ad17756561b5824053f6af8d71fac'
+    hikari:
+      maximum-pool-size: 5
+      initial-pool-size: 1
+      connection-timeout: 20000
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: true
+        cache.redisson:
+          entity.expiration.max_idle_time: 604800000
+
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      cache:
+        use_second_level_cache: true
+        factory_class: org.redisson.hibernate.RedissonRegionFactory
+        redisson:
+          fallback: true
+
+  redis:
+    ssl: true
+    redisson:
+      config: |
+        masterSlaveServersConfig:
+          retryAttempts: 3
+          retryInterval: 1500
+          loadBalancer: !<org.redisson.connection.balancer.RoundRobinLoadBalancer> {}
+          masterAddress: "redis://agenatech.yle1ni.ng.0001.eun1.cache.amazonaws.com:6379"
+          slaveAddresses:
+            - "redis://agenatech-002.yle1ni.0001.eun1.cache.amazonaws.com:6379"
+            - "redis://agenatech-003.yle1ni.0001.eun1.cache.amazonaws.com:6379"
+
+
+

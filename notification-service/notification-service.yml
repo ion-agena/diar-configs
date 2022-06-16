@@ -1,0 +1,25 @@
+server:
+  port: 9095
+spring:
+  application:
+    name: notification-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/notifications?ssl=false
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update # use validate in production
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    time-zone: UTC
+logging:
+  level:
+    root: DEBUG
+springdoc.api-docs.path: /api/v1/notifications/api-doc
+health:
+  config:
+    enabled: false

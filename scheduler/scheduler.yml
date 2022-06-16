@@ -1,0 +1,34 @@
+server:
+  port: 8091
+
+achievements:
+  url: http://localhost:8080
+  run-scheduler-path: api/v1/commands/scheduler-run
+  cron: 0 0 8 * * *
+gamification-mgr:
+  url: http://localhost:8080
+  executions:
+    cleanup-path: /commands/clean-finished-execution-data
+    cron: 0 0 3 * * *
+  clear-caches:
+    path: /commands/clean-daily-caches
+    cron: '@midnight'
+
+logging:
+  level:
+    com.agenatech: DEBUG
+feign.client.config.default.loggerLevel: full
+
+health:
+  config:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+sentry:
+  dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
+

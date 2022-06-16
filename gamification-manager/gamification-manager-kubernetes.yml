@@ -1,0 +1,72 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://database-dev-1.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/gamification-manager?ssl=false
+    username: postgres
+    password: '{cipher}343c6565adc705290de2fc08085115b01920d8a9bc7bf5d745f64270d16f175e587ad17756561b5824053f6af8d71fac'
+    hikari:
+      maximum-pool-size: 5
+      initial-pool-size: 1
+      connection-timeout: 20000
+
+  cache:
+    type: redis
+    expiration:
+      tasks-by-category-step:
+        max-idle-time: 604800000
+        ttl: 0
+      recurring-tasks-by-step:
+        max-idle-time: 604800000
+        ttl: 0
+      tasks-executions-by-user-date:
+        max-idle-time: 0
+        ttl: 86400000
+      tasks-executions-by-user:
+        max-idle-time: 604800000
+        ttl: 0
+      step-description:
+        max-idle-time: 1210000000
+        ttl: 0
+      cards-by-task:
+        max-idle-time: 604800000
+        ttl: 0
+
+  redis:
+    ssl: true
+    redisson:
+      config: |
+        masterSlaveServersConfig:
+          retryAttempts: 3
+          retryInterval: 1500
+          loadBalancer: !<org.redisson.connection.balancer.RoundRobinLoadBalancer> {}
+          masterAddress: "redis://agenatech.yle1ni.ng.0001.eun1.cache.amazonaws.com:6379"
+          slaveAddresses:
+            - "redis://agenatech-002.yle1ni.0001.eun1.cache.amazonaws.com:6379"
+            - "redis://agenatech-003.yle1ni.0001.eun1.cache.amazonaws.com:6379"
+
+  kafka:
+    enabled: true
+    bootstrap-servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
+    properties:
+      security.protocol: SSL
+    producer:
+      bootstrap-servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.type.mapping: reply:com.agenatech.gamificationmanager.model.ExecutedCard
+    topic:
+      name: card-reply
+      replicas: 2
+      partitions: 3
+    consumer:
+      group-id: gamification-manager
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      profiles-topic.name: user-profile
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.type.mapping: profile:com.agenatech.gamificationmanager.client.kafka.consumer.payload.UserProfile
+        bootstrap.servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
+        security.protocol: SSL
+        session.timeout.ms: 45000
