@@ -16,9 +16,9 @@ spring:
         security.protocol: SSL
         session.timeout.ms: 45000
   datasource:
-    url: jdbc:postgresql://database-dev-1.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/achievements-manager?ssl=false
+    url: jdbc:postgresql://database-qa-1.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/achievements-manager?ssl=false
     username: postgres
-    password: '{cipher}343c6565adc705290de2fc08085115b01920d8a9bc7bf5d745f64270d16f175e587ad17756561b5824053f6af8d71fac'
+    password: '{cipher}a4e03ee319ea9826cc10fcc845a80efd6eae373cf657616d6f80c1e4bc505694acc70302e230452c15b7b215c3415261'
     hikari:
       maximum-pool-size: 5
       initial-pool-size: 1
