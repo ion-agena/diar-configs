@@ -51,10 +51,10 @@ spring:
           retryAttempts: 3
           retryInterval: 1500
           loadBalancer: !<org.redisson.connection.balancer.RoundRobinLoadBalancer> {}
-          masterAddress: "redis://agenatech.yle1ni.ng.0001.eun1.cache.amazonaws.com:6379"
+          masterAddress: "redis://development-001.7rswex.0001.eun1.cache.amazonaws.com:6379"
           slaveAddresses:
-            - "redis://agenatech-002.yle1ni.0001.eun1.cache.amazonaws.com:6379"
-            - "redis://agenatech-003.yle1ni.0001.eun1.cache.amazonaws.com:6379"
+            - "redis://development-002.7rswex.0001.eun1.cache.amazonaws.com:6379"
+            - "redis://development-003.7rswex.0001.eun1.cache.amazonaws.com:6379"
 
 
 
