@@ -53,7 +53,6 @@ spring:
       basic.auth.credentials.source: USER_INFO
       sasl:
         mechanism: PLAIN
-        jaas.config: '{cipher}947f16f519ca2cfe6d84003c256fbbd580aaf4f93895a35b311ff1cdae056cc52bcd4d85290cecba158a696421a7fc2f9a04764c8575a84a358172d3fdd9b1bdc1d52f786ad81a1b265c6d69dc751ebd1dce9ee467b9ad7997699fccda871d79a66cc908414de2c8d8fef2ddc38a80fbffccc2bec8760a8b3d53e06ef1be13f9aabf5c1394f0f02c4c7b6a19d9743b1825143e1c8b60b809712f33ce13acfc0ba7d7b8b6efe908bd9c1211c198b736905630f9b102cbff3f7196ef74534b902d'
     producer:
       bootstrap-servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -75,12 +74,10 @@ spring:
         spring.json.type.mapping: profile:com.agenatech.gamificationmanager.client.kafka.consumer.payload.UserProfile
         sasl:
           mechanism: PLAIN
-          jaas.config: '{cipher}947f16f519ca2cfe6d84003c256fbbd580aaf4f93895a35b311ff1cdae056cc52bcd4d85290cecba158a696421a7fc2f9a04764c8575a84a358172d3fdd9b1bdc1d52f786ad81a1b265c6d69dc751ebd1dce9ee467b9ad7997699fccda871d79a66cc908414de2c8d8fef2ddc38a80fbffccc2bec8760a8b3d53e06ef1be13f9aabf5c1394f0f02c4c7b6a19d9743b1825143e1c8b60b809712f33ce13acfc0ba7d7b8b6efe908bd9c1211c198b736905630f9b102cbff3f7196ef74534b902d'
         bootstrap.servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
         security.protocol: SASL_SSL
         session.timeout.ms: 45000
         basic.auth.credentials.source: USER_INFO
-        basic.auth.user.info: '{cipher}c23af0042cd1d44cf552a2e92df2b90dac911941060d41f48e02bf04acbf01bd8a13ec131b06096dd4509193f29e99345cca2503e454a550ba84c136ecfb54d4b40f426cfe248fe7cf4e9117836c0fb8de0ff2a63b69888b03df78103711716aa41b82404897b574a5686f9e8c19949b'
 
 management:
   endpoints:
