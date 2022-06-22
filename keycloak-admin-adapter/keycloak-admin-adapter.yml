@@ -3,7 +3,7 @@ server:
 
 auth-server:
   url: ${keycloak-client.server-url}
-  admin-secret: '{cipher}f0cafeeb21ba82de746da84036b8d2cac8de9e517181c72995d4d3bb9ede93ee39e016fe132908cbd8b9d14d13fa9e27e1efa69a680836734d5bbad0dc42eee5'
+  admin-secret: '{cipher}64a1911acad413968dd15e2405fe113e8ede08b7d1179d7f3cf1bd283a788b0c83848eb3c60f0d956d9974bbff43adaaaa14cdff9cca37ccbc691a20a26ccbf6'
   cli-token-uri: auth/realms/master/protocol/openid-connect/token
   users-uri: auth/admin/realms/${keycloak-client.realm}/users
   email-actions-uri: auth/admin/realms/${keycloak-client.realm}/users/{id}/execute-actions-email
