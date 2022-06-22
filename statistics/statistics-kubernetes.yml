@@ -18,7 +18,7 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.type.mapping: reply:com.agenatech.statistics.model.ExecutedCard,profile:com.agenatech.statistics.model.UserProfile
-        bootstrap-servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
+        bootstrap.servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
         security.protocol: SSL
         session.timeout.ms: 45000
 
