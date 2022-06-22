@@ -45,11 +45,11 @@ spring:
 
   kafka:
     enabled: true
-    bootstrap-servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
+    bootstrap-servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
     properties:
       security.protocol: SSL
     producer:
-      bootstrap-servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
+      bootstrap-servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
@@ -67,6 +67,6 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.type.mapping: profile:com.agenatech.gamificationmanager.client.kafka.consumer.payload.UserProfile
-        bootstrap.servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
+        bootstrap-servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
         security.protocol: SSL
         session.timeout.ms: 45000
