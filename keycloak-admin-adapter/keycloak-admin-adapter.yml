@@ -8,7 +8,7 @@ auth-server:
   users-uri: auth/admin/realms/${keycloak-client.realm}/users
   email-actions-uri: auth/admin/realms/${keycloak-client.realm}/users/{id}/execute-actions-email
 keycloak-client:
-  server-url: https://authentication-qa.thehousehealth.com
+  server-url: https://auth-qa.thehousehealth.com
   realm: diar
 profiles:
   url: http://localhost:8989
