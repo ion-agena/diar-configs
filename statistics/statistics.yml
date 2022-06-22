@@ -54,7 +54,6 @@ spring:
         bootstrap.servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
         security.protocol: SASL_SSL
         session.timeout.ms: 45000
-        basic.auth.credentials.source: USER_INFO
 
 management.endpoints.web.exposure.include: '*'
 
