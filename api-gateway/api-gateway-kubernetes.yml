@@ -60,7 +60,7 @@ spring:
         - id: gamification-manager
           uri: http://gamification-manager
           predicates:
-            - Path=/api/v1/cards/**, /api/v1/tasks/**, /api/v1/categories/**, /api/v1/gamification-manager/**
+            - Path=/api/v1/cards/**, /api/v1/tasks/**, /api/v1/categories/**, /api/v1/gamification-manager/**, /api/v1/todo/**
             - Method=GET
         - id: descriptions
           uri: http://gamification-manager
