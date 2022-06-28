@@ -123,12 +123,12 @@ spring:
           predicates:
             - Path=/api/v1/multimedia, /api/v1/multimedia/**, /api/v1/multimedia-manager/**
         - id: data-aggregator
-            uri: http://data-aggregator
-            predicates:
-              - Path=/api/v1/mapp/**, /api/v1/data-aggregator/api-doc
-              - Method=GET
-            filters:
-              - AddPrincipalToPathFilter
+          uri: http://data-aggregator
+          predicates:
+            - Path=/api/v1/mapp/**, /api/v1/data-aggregator/api-doc
+            - Method=GET
+          filters:
+            - AddPrincipalToPathFilter
 
 
 keycloak-client:
