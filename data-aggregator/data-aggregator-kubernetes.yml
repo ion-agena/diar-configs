@@ -5,24 +5,4 @@ profiles:
   url: http://profiles
 gamification-manager:
   url: http://gamification-manager
-achievements-manager:
-  url: achievements-manager
 
-spring:
-  cache:
-    type: redis
-    redis:
-      cache-null-values: false
-      time-to-live: 43200000
-  redis:
-    ssl: true
-    redisson:
-      config: |
-        masterSlaveServersConfig:
-          retryAttempts: 3
-          retryInterval: 1500
-          loadBalancer: !<org.redisson.connection.balancer.RoundRobinLoadBalancer> {}
-          masterAddress: "redis://development-001.7rswex.0001.eun1.cache.amazonaws.com:6379"
-          slaveAddresses:
-            - "redis://development-002.7rswex.0001.eun1.cache.amazonaws.com:6379"
-            - "redis://development-003.7rswex.0001.eun1.cache.amazonaws.com:6379"
