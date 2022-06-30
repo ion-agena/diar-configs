@@ -37,7 +37,6 @@ spring:
     bootstrap-servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
     properties:
       security.protocol: SASL_SSL
-      basic.auth.credentials.source: USER_INFO
       sasl:
         mechanism: PLAIN
     producer:
