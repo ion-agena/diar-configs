@@ -12,13 +12,7 @@ gamification-manager:
 logging:
   level:
     com.house: DEBUG
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 10000
-        readTimeout: 10000
-        loggerLevel: full
+    reactor.netty.http.client.HttpClient: DEBUG
 
 springdoc.api-docs.path: /api/v1/data-aggregator/api-doc
 
