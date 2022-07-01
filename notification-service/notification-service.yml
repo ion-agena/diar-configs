@@ -1,5 +1,6 @@
 server:
   port: 9095
+
 spring:
   application:
     name: notification-service
@@ -16,10 +17,20 @@ spring:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false
     time-zone: UTC
+
+app:
+  email:
+    enabled: false
+    default-email: "na"
+  push:
+    enabled: true
+
 logging:
   level:
-    root: DEBUG
+    com.agenatech: DEBUG
+
 springdoc.api-docs.path: /api/v1/notifications/api-doc
+
 health:
   config:
     enabled: false
