@@ -49,10 +49,25 @@ spring:
             - Method=POST,GET
           filters:
             - AddPrincipalToPathFilter
+        - id: gamification-manager-web-principal
+          uri: http://gamification-manager-web
+          predicates:
+            - Path=/api/v1/web/**, /api/v1/gamification-manager-web/**
+            - Method=POST,GET
+          filters:
+              - AddPrincipalToPathFilter
         - id: gamification-manager-admin
           uri: http://gamification-manager
           predicates:
             - Path=/api/v1/cards/**, /api/v1/cards, /api/v1/tasks, /api/v1/categories/**, /api/v1/categories
+            - Method=POST,PATCH,DELETE
+          metadata:
+            auth-roles:
+              - admin-diar
+        - id: gamification-manager-web-admin
+          uri: http://gamification-manager-web
+          predicates:
+            - Path=/api/v1/web/cards/**, /api/v1/web/cards, /api/v1/web/tasks
             - Method=POST,PATCH,DELETE
           metadata:
             auth-roles:
