@@ -50,7 +50,7 @@ spring:
       replicas: 2
       partitions: 3
     consumer:
-      group-id: gamification-manager
+      group-id: gamification-manager-web
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
