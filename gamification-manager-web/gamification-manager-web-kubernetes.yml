@@ -44,9 +44,13 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.type.mapping: reply:com.agenatech.gamificationmanagerweb.model.ExecutedCard
+        spring.json.type.mapping: reply:com.agenatech.gamificationmanagerweb.model.ExecutedCard,step:com.agenatech.gamificationmanagerweb.model.payload.StepUpdateDto
     topic:
       name: card-reply
+      replicas: 2
+      partitions: 3
+    step.topic:
+      name: step-update-request
       replicas: 2
       partitions: 3
     consumer:
