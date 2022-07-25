@@ -12,7 +12,7 @@ spring:
         - id: profiles
           uri: http://profiles
           predicates:
-            - Path=/api/v1/profiles/*/*, /api/v1/therapist-profiles/**, /api/v1/profiles/api-doc
+            - Path=/api/v1/profiles/*/*, /api/v1/therapist-profiles/**, /api/v1/therapist-profiles, /api/v1/profiles/api-doc
             - Method=GET
         - id: openapi
           uri: http://api-gateway
