@@ -57,7 +57,7 @@ spring:
         - id: gamification-manager-web-admin
           uri: http://gamification-manager-web
           predicates:
-            - Path=/api/v1/web/cards/**, /api/v1/web/cards, /api/v1/web/tasks, /api/v1/web/admin/**
+            - Path=/api/v1/web/cards/**, /api/v1/web/cards, /api/v1/web/tasks,  /api/v1/web/tasks/**, /api/v1/web/admin/**
             - Method=POST,PATCH,DELETE
           metadata:
             auth-roles:
