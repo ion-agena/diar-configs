@@ -137,6 +137,7 @@ springdoc:
       - statistics-admin
       - openapi
       - descriptions
+      - notification-service-principal
 
 health:
   config:
