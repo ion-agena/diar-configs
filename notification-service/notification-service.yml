@@ -23,7 +23,7 @@ app:
     enabled: false
     default-email: "na"
   push:
-    enabled: true
+    enabled: false
 
 logging:
   level:
