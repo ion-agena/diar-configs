@@ -104,6 +104,8 @@ spring:
           predicates:
             - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-scheduled/**, /api/v1/step-user/**, /api/v1/achievements-step/**, /api/v1/achievements-step, /api/v1/achievement-user/**, /api/v1/achievements-manager/api-doc
             - Method=GET
+          filters:
+            - AddPrincipalToPathFilter
         - id: statistics
           uri: http://statistics
           predicates:
