@@ -137,7 +137,7 @@ spring:
           uri: http://notification-service
           predicates:
             - Path=/api/v1/notifications, /api/v1/emails, /api/v1/notification-service/api-doc
-            - Method=POST
+            - Method=POST,GET
         - id: notification-service-principal
           uri: http://notification-service
           predicates:
