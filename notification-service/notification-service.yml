@@ -26,7 +26,7 @@ logging:
   level:
     com.agenatech: DEBUG
 
-springdoc.api-docs.path: /api/v1/notifications/api-doc
+springdoc.api-docs.path: /api/v1/notification-service/api-doc
 
 health:
   config:
