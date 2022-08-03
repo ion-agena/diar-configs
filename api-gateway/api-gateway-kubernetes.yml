@@ -14,6 +14,14 @@ spring:
           predicates:
             - Path=/api/v1/profiles/*/*, /api/v1/therapist-profiles/**, /api/v1/therapist-profiles, /api/v1/profiles/api-doc
             - Method=GET
+        - id: profiles-therapist
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/profiles/set-client-step/**
+            - Method=POST
+          metadata:
+            auth-roles:
+              - therapist-diar
         - id: gamification-manager-principal
           uri: http://gamification-manager
           predicates:
@@ -27,7 +35,7 @@ spring:
             - Path=/api/v1/web/**, /api/v1/gamification-manager-web/**
             - Method=POST,GET
           filters:
-              - AddPrincipalToPathFilter
+            - AddPrincipalToPathFilter
         - id: gamification-manager-admin
           uri: http://gamification-manager
           predicates:
@@ -95,17 +103,17 @@ spring:
             - Method=GET
           filters:
             - AddPrincipalToPathFilter
-#            API GW security impl should be corrected
-#        - id: statistics-admin
-#          uri: http://statistics
-#          order: 1
-#          predicates:
-#            - Path=/api/v1/statistics/presence/**
-#            - Method=GET
-#          metadata:
-#            auth-roles:
-#              - admin-diar
-#              - therapist-diar
+        #            API GW security impl should be corrected
+        #        - id: statistics-admin
+        #          uri: http://statistics
+        #          order: 1
+        #          predicates:
+        #            - Path=/api/v1/statistics/presence/**
+        #            - Method=GET
+        #          metadata:
+        #            auth-roles:
+        #              - admin-diar
+        #              - therapist-diar
         - id: multimedia
           uri: http://multimedia-manager
           predicates:

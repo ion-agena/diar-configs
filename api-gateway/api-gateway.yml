@@ -127,7 +127,7 @@ springdoc:
       - achievements-admin
       - statistics-admin
       - profiles-principal
-      - profiles-admin
+      - profiles-therapist
       - gamification-manager-principal
       - gamification-manager-admin
       - gamification-manager-web-admin
