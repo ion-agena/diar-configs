@@ -29,6 +29,9 @@ spring:
       step-tasks-count:
         max-idle-time: 30000
         ttl: 0
+      user-step:
+        max-idle-time: 30000
+        ttl: 0
 
 
   redis:
