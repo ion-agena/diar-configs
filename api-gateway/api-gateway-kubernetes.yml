@@ -22,6 +22,14 @@ spring:
           metadata:
             auth-roles:
               - therapist-diar
+        - id: profiles-admin
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/profiles/admin/**
+            - Method=POST
+          metadata:
+            auth-roles:
+              - admin-diar
         - id: gamification-manager-principal
           uri: http://gamification-manager
           predicates:
