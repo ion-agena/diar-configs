@@ -33,7 +33,7 @@ spring:
 
   # Producer properties
   kafka:
-    enabled: true
+    enabled: false
     bootstrap-servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
     properties:
       security.protocol: SASL_SSL
