@@ -3,7 +3,7 @@ spring:
     enabled: false
     topic:
       name: client-payments
-      replicas: 3
+      replicas: 2
       partitions: 3
     bootstrap-servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
     properties:
