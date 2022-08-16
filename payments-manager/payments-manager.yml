@@ -1,0 +1,24 @@
+spring:
+  kafka:
+    enabled: false
+    topic:
+      name: client-payments
+      replicas: 3
+      partitions: 3
+    bootstrap-servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
+    properties:
+      security.protocol: SSL
+    producer:
+      bootstrap-servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.type.mapping: payment:com.thehouse.paymentsmanager.model.HouseEvent
+env:
+  url: https://api-dev.thehousehealth.com
+nets:
+  url: https://test.api.dibspayment.eu
+  create-payment-url: /v1/payments
+  secret: '{cipher}0878f01685712ba3770c088cf8380516184180b2722d3ef066cfbb16602411097c87e2a4e4a88622bca8b94cfaacba6ec8b56f4f8b3db882f3f49272bc5edbe35e82ed82edbb6c3a0fea741c27685d94'
+  terms-url:  https://testtest.com
+  webhook-url: /api/v1/notifications/nets
