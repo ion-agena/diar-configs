@@ -65,6 +65,8 @@ spring:
           predicates:
             - Path=/api/v1/cards/**, /api/v1/tasks/**, /api/v1/categories/**, /api/v1/gamification-manager/**, /api/v1/todo/**, /api/v1/task-executions/**
             - Method=GET
+          filters:
+            - AddPrincipalToPathFilter
         - id: descriptions
           uri: http://gamification-manager
           predicates:
@@ -111,17 +113,6 @@ spring:
             - Method=GET
           filters:
             - AddPrincipalToPathFilter
-        #            API GW security impl should be corrected
-        #        - id: statistics-admin
-        #          uri: http://statistics
-        #          order: 1
-        #          predicates:
-        #            - Path=/api/v1/statistics/presence/**
-        #            - Method=GET
-        #          metadata:
-        #            auth-roles:
-        #              - admin-diar
-        #              - therapist-diar
         - id: multimedia
           uri: http://multimedia-manager
           predicates:
