@@ -19,6 +19,7 @@ app:
   email:
     enabled: true
     default-email: "ion@thehousehealth.com"
+  #    default-email: "no-reply@thehousehealth.com"
   push:
     enabled: false
 
