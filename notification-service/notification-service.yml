@@ -17,8 +17,8 @@ spring:
 
 app:
   email:
-    enabled: false
-    default-email: "na"
+    enabled: true
+    default-email: "no-reply@thehousehealth.com"
   push:
     enabled: false
 
