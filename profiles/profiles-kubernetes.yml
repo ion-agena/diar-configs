@@ -74,4 +74,4 @@ spring:
 
 notifications:
   url: http://notification-service
-  email-url: /relapse
+  email-url: /api/v1/emails/relapse
