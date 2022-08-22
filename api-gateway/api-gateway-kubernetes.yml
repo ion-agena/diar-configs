@@ -17,7 +17,7 @@ spring:
         - id: profiles-therapist
           uri: http://profiles
           predicates:
-            - Path=/api/v1/profiles/set-client-step/**
+            - Path=/api/v1/profiles/set-client-step/**, /profiles/*/execute-relapse
             - Method=POST
           metadata:
             auth-roles:
