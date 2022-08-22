@@ -72,3 +72,6 @@ spring:
 
 
 
+notifications:
+  url: http://notification-service
+  email-url: /relapse
