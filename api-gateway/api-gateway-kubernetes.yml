@@ -33,7 +33,7 @@ spring:
         - id: profiles-admin-therapist-read
           uri: http://profiles
           predicates:
-            - Path=/api/v1/profiles/**
+            - Path=/api/v1/private/profiles/**
             - Method=GET
           metadata:
             auth-roles:
