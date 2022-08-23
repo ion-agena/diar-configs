@@ -17,7 +17,7 @@ spring:
         - id: profiles-therapist
           uri: http://profiles
           predicates:
-            - Path=/api/v1/profiles/set-client-step/**, /api/v1/profiles/*/execute-relapse
+            - Path=/api/v1/profiles/set-client-step/**, /api/v1/profiles/*/execute-relapse, /api/v1/profiles/*/start-treatment
             - Method=POST
           metadata:
             auth-roles:
@@ -30,6 +30,15 @@ spring:
           metadata:
             auth-roles:
               - admin-diar
+        - id: profiles-admin-therapist-read
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/profiles/**
+            - Method=GET
+          metadata:
+            auth-roles:
+              - admin-diar
+              - therapist-diar
         - id: gamification-manager-principal
           uri: http://gamification-manager
           predicates:

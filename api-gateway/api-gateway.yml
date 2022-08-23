@@ -130,6 +130,7 @@ springdoc:
       - profiles-principal
       - profiles-therapist
       - profiles-admin
+      - profiles-admin-therapist-read
       - gamification-manager-principal
       - gamification-manager-admin
       - gamification-manager-web-admin
