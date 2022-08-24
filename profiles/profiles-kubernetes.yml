@@ -16,6 +16,19 @@ spring:
       name: user-profile
       replicas: 2
       partitions: 3
+    consumer:
+      group-id: profiles
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      step-topic.name: step-update-request
+      payment-topic.name: client-payments
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.type.mapping: step:com.agenatech.solutions.profiles.client.kafka.consumer.payload.StepUpdateDto,payment:com.agenatech.solutions.profiles.client.kafka.consumer.payload.PaymentEventDto
+        bootstrap.servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
+        security.protocol: SSL
+        session.timeout.ms: 45000
 
   datasource:
     url: jdbc:postgresql://database-qa-1.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/profiles?ssl=false
@@ -59,3 +72,6 @@ spring:
 
 
 
+notifications:
+  url: http://notification-service
+  email-url: /api/v1/emails/relapse

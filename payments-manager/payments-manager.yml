@@ -26,6 +26,11 @@ nets:
   webhook-url: /api/v1/notifications/nets
   checkout-url: https://api-qa.thehousehealth.com
 
+products:
+  price-net: 500
+  price-gross: 550
+  currency: SEK
+  product-name: house-1
 
 management:
   endpoints:

@@ -11,15 +11,26 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update # use validate in production
+      ddl-auto: update
   jackson:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false
     time-zone: UTC
+
+app:
+  email:
+    enabled: true
+    default-email: "ion@thehousehealth.com"
+  #    default-email: "no-reply@thehousehealth.com"
+  push:
+    enabled: false
+
 logging:
   level:
-    root: DEBUG
-springdoc.api-docs.path: /api/v1/notifications/api-doc
+    com.agenatech: DEBUG
+
+springdoc.api-docs.path: /api/v1/notification-service/api-doc
+
 health:
   config:
     enabled: false
