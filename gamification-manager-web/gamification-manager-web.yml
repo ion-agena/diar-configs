@@ -32,6 +32,13 @@ spring:
       user-step:
         max-idle-time: 30000
         ttl: 0
+      tasks-title-projection:
+        max-idle-time: 30000
+        ttl: 0
+      cards-title-projection:
+        max-idle-time: 30000
+        ttl: 0
+
 
 
   redis:
