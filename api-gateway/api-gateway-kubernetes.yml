@@ -53,6 +53,13 @@ spring:
             - Method=GET
           filters:
             - AddPrincipalToPathFilter
+        - id: gamification-manager-web-principal-post
+          uri: http://gamification-manager-web
+          predicates:
+            - Path=/api/v1/web/commands/client/me/**
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
         - id: gamification-manager-admin
           uri: http://gamification-manager
           predicates:
