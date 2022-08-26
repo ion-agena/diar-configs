@@ -83,13 +83,6 @@ spring:
             - Method=GET
           filters:
             - AddPrincipalToPathFilter
-        - id: descriptions
-          uri: http://gamification-manager
-          predicates:
-            - Path=/api/v1/*/*/description
-            - Method=GET,PUT,PATCH
-          filters:
-            - RewritePath=/api/v1/(?<entity>.*)/(?<path>.*)/description, /api/v1/description//$\{path}/
         - id: keycloak-admin-adapter
           uri: http://keycloak-admin-adapter
           predicates:
