@@ -50,7 +50,7 @@ spring:
           uri: http://gamification-manager-web
           predicates:
             - Path=/api/v1/web/**, /api/v1/gamification-manager-web/**
-            - Method=POST,GET
+            - Method=GET
           filters:
             - AddPrincipalToPathFilter
         - id: gamification-manager-admin
