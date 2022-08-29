@@ -1,4 +1,9 @@
 spring:
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
   datasource:
     url: jdbc:postgresql://database-dev-1.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/gamification-manager-web?ssl=false
     username: postgres
