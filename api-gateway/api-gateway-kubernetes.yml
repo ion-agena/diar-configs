@@ -18,7 +18,7 @@ spring:
           uri: http://profiles
           predicates:
             - Path=/api/v1/profiles/set-client-step/**, /api/v1/profiles/*/execute-relapse, /api/v1/profiles/*/start-treatment, /api/v1/therapist-notes, /api/v1/therapist-notes/search/**
-            - Method=POST,GET
+            - Method=POST,GET,PATCH,DELETE
           metadata:
             auth-roles:
               - therapist-diar
@@ -26,7 +26,7 @@ spring:
           uri: http://profiles
           predicates:
             - Path=/api/v1/profiles/admin/**, /api/v1/admin-notes, /api/v1/admin-notes/search/**
-            - Method=POST,GET
+            - Method=POST,GET,PATCH,DELETE
           metadata:
             auth-roles:
               - admin-diar
