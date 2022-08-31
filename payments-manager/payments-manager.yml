@@ -32,6 +32,8 @@ products:
   currency: SEK
   product-name: house-1
 
+springdoc.api-docs.path: /api/v1/payments-manager/api-doc
+
 management:
   endpoints:
     web:
