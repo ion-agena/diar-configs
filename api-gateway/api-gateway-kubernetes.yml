@@ -19,6 +19,8 @@ spring:
           predicates:
             - Path=/api/v1/profiles/set-client-step/**, /api/v1/profiles/*/execute-relapse, /api/v1/profiles/*/start-treatment, /api/v1/therapist-notes, /api/v1/therapist-notes/**, /api/v1/therapist-notes/search/**
             - Method=POST,GET,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
           metadata:
             auth-roles:
               - therapist-diar
@@ -27,6 +29,8 @@ spring:
           predicates:
             - Path=/api/v1/profiles/admin/**, /api/v1/admin-notes, /api/v1/admin-notes/**, /api/v1/admin-notes/search/**
             - Method=POST,GET,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
           metadata:
             auth-roles:
               - admin-diar
