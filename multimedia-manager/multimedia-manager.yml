@@ -1,4 +1,8 @@
-spring.servlet.multipart.max-file-size: 50MB
+spring.servlet.multipart:
+  enabled: true
+  max-file-size: 100MB
+  max-request-size: 100MB
+
 amazon:
   accessKey: '{cipher}8b34d9002a6d8db02f5e5cd30fb74fca943971b175b3020b37d600deed181e1a704f7f48b3b8c207124cfb12b462eb5c'
   secretKey: '{cipher}452a92ea8ad6d7181a36f0e5864523a571f67c6ae8a4041d1c9dd8bbb524a3e9179d5f26d32d1c38ed901d25da61f26f3b53d26819f1146c12d31857745f9ca4'
