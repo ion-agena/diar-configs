@@ -15,6 +15,9 @@ spring:
       WRITE_DATES_AS_TIMESTAMPS: false
     time-zone: UTC
 
+  sendgrid:
+    api-key: '{cipher}9f60833c0690ef22fc776511be66b01369b308eafc7af6200c93ade94f9e557c58b644c21a2853749643e0c0ca8cacbb53bd7fb8a69398eb7e5a1d03377a9b825970dd329a1362104b661f0e94676d1bd089853c486c30aefb6ed879f42bc3d2'
+
 app:
   email:
     enabled: true
