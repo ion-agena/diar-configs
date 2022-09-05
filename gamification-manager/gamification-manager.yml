@@ -87,7 +87,8 @@ management:
 
 multimedia:
   url: http://multimedia-manager
-  bulk-url: /bulk
+  path: /api/v1/multimedia
+  bulk-url: /api/v1/multimedia/bulk
 
 springdoc.api-docs.path: /api/v1/gamification-manager/api-doc
 logging:

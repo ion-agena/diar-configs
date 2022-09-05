@@ -73,7 +73,8 @@ spring:
 
 multimedia:
   url: http://multimedia-manager
-  bulk-url: /bulk
+  path: /api/v1/multimedia
+  bulk-url: /api/v1/multimedia/bulk
 
 management:
   endpoints:
