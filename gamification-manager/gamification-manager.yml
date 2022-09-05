@@ -84,6 +84,11 @@ management:
     web:
       exposure:
         include: '*'
+
+multimedia:
+  url: http://multimedia-manager
+  bulk-url: /bulk
+
 springdoc.api-docs.path: /api/v1/gamification-manager/api-doc
 logging:
   level:
