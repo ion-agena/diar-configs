@@ -24,7 +24,7 @@ nets:
   secret: '{cipher}0878f01685712ba3770c088cf8380516184180b2722d3ef066cfbb16602411097c87e2a4e4a88622bca8b94cfaacba6ec8b56f4f8b3db882f3f49272bc5edbe35e82ed82edbb6c3a0fea741c27685d94'
   terms-url:  https://testtest.com
   webhook-url: /api/v1/notifications/nets
-  checkout-url: https://api-dev.thehousehealth.com
+  checkout-url: http://127.0.0.1:5173
 
 products:
   price-net: 500
