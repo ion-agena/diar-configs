@@ -5,14 +5,14 @@ spring:
         - id: profiles-principal
           uri: http://profiles
           predicates:
-            - Path=/api/v1/profiles/me, /api/v1/therapist-profiles/me, /api/v1/admin-profiles/me, /api/v1/profiles/me/drop-sober-date, /api/v1/notifications/calendly
+            - Path=/api/v1/profiles/me, /api/v1/therapist-profiles/me, /api/v1/admin-profiles/me, /api/v1/profiles/me/drop-sober-date
             - Method=GET,PUT,PATCH,DELETE,POST
           filters:
             - AddPrincipalToPathFilter
         - id: profiles
           uri: http://profiles
           predicates:
-            - Path=/api/v1/profiles/*/*, /api/v1/therapist-profiles/**, /api/v1/therapist-profiles, /api/v1/profiles/api-doc
+            - Path=/api/v1/profiles/*/*, /api/v1/therapist-profiles/**, /api/v1/therapist-profiles, /api/v1/profiles/events-list, /api/v1/profiles/api-doc
             - Method=GET
         - id: profiles-therapist
           uri: http://profiles
