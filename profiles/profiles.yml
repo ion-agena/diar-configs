@@ -55,6 +55,7 @@ calendly:
   organization: https://api.calendly.com/organizations/3130a622-f686-4ce8-aed5-e2d59df9fd78
   url: https://api.calendly.com
   events-list-url: scheduled_events
+  event-types-url: event_types
 
 notifications:
   url: http://notification-service
