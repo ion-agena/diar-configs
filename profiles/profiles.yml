@@ -52,11 +52,13 @@ spring:
 
 calendly:
   key: test
-  organization: https://api.calendly.com/organizations/3130a622-f686-4ce8-aed5-e2d59df9fd78
   url: https://api.calendly.com
+  organization-id: 3130a622-f686-4ce8-aed5-e2d59df9fd78
+  organization: ${calendly.url}/organizations/${calendly.organization-id}
   events-list-url: scheduled_events
   event-types-url: event_types
   users-url: organization_memberships
+  invitations-url: organizations/{organizationId}/invitations
 
 notifications:
   url: http://notification-service
