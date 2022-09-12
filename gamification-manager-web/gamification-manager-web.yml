@@ -78,6 +78,11 @@ spring:
         security.protocol: SASL_SSL
         session.timeout.ms: 45000
 
+multimedia:
+  url: http://multimedia-manager
+  path: /api/v1/multimedia
+  bulk-url: /api/v1/multimedia/bulk
+
 management:
   endpoints:
     web:
