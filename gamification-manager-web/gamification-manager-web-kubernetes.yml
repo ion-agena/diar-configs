@@ -5,7 +5,7 @@ spring:
       fail-on-empty-beans: false
 
   datasource:
-    url: jdbc:postgresql://database-qa-1.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/gamification-manager-web?ssl=false
+    url: jdbc:postgresql://database-prod-2.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/gamification-manager-web?ssl=false
     username: postgres
     password: '{cipher}a4e03ee319ea9826cc10fcc845a80efd6eae373cf657616d6f80c1e4bc505694acc70302e230452c15b7b215c3415261'
     hikari:
@@ -48,11 +48,11 @@ spring:
 
   kafka:
     enabled: true
-    bootstrap-servers: b-1.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094
+    bootstrap-servers: b-1.kafkaprod.i2y7xe.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaprod.i2y7xe.c2.kafka.eu-north-1.amazonaws.com:9094
     properties:
       security.protocol: SSL
     producer:
-      bootstrap-servers: b-1.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094
+      bootstrap-servers: b-1.kafkaprod.i2y7xe.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaprod.i2y7xe.c2.kafka.eu-north-1.amazonaws.com:9094
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
@@ -74,6 +74,6 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.type.mapping: profile:com.agenatech.gamificationmanagerweb.kafka.consumer.payload.UserProfile
-        bootstrap.servers: b-1.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094
+        bootstrap.servers: b-1.kafkaprod.i2y7xe.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaprod.i2y7xe.c2.kafka.eu-north-1.amazonaws.com:9094
         security.protocol: SSL
         session.timeout.ms: 45000
