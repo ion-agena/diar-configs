@@ -2,46 +2,47 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: profiles-therapist
-          uri: http://profiles
-          predicates:
-            - Path=/api/v1/profiles/me/set-client-step/**
-            - Method=POST
-          filters:
-            - AddPrincipalToPathFilter
-          metadata:
-            auth-roles:
-              - therapist-diar
         - id: profiles-principal
           uri: http://profiles
           predicates:
-            - Path=/api/v1/profiles/me
-            - Method=GET,PUT,PATCH,DELETE
+            - Path=/api/v1/profiles/me, /api/v1/therapist-profiles/me, /api/v1/admin-profiles/me, /api/v1/profiles/me/drop-sober-date
+            - Method=GET,PUT,PATCH,DELETE,POST
           filters:
             - AddPrincipalToPathFilter
         - id: profiles
           uri: http://profiles
           predicates:
-            - Path=/api/v1/profiles/*/*, /api/v1/profiles/api-doc
+            - Path=/api/v1/profiles/*/*, /api/v1/therapist-profiles/**, /api/v1/therapist-profiles, /api/v1/calendar/**, /api/v1/profiles/api-doc
             - Method=GET
-        - id: openapi
-          uri: http://api-gateway
+        - id: profiles-therapist
+          uri: http://profiles
           predicates:
-            - Path=/v3/api-docs/**
-          filters:
-            - RewritePath=/v3/api-docs/(?<path>.*), /api/v1//$\{path}/api-doc
-        - id: ai-management
-          uri: http://ai-management:9090
-          predicates:
-            - Path=/api/v1/emotions/**,/api/v1/sleep,/api/v1/sleep/**,/api/v1/ai-management/api-doc
-            - Method=GET,POST
-        - id: health-data
-          uri: http://health-data
-          predicates:
-            - Path=/api/v1/users/me/hrv, /api/v1/users/me/steps, /api/v1/health-data/api-doc
-            - Method=GET,POST
+            - Path=/api/v1/profiles/set-client-step/**, /api/v1/profiles/*/execute-relapse, /api/v1/profiles/*/start-treatment, /api/v1/therapist-notes, /api/v1/therapist-notes/**, /api/v1/therapist-notes/search/**
+            - Method=POST,GET,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
+          metadata:
+            auth-roles:
+              - therapist-diar
+        - id: profiles-admin
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/profiles/admin/**, /api/v1/admin-notes, /api/v1/admin-notes/**, /api/v1/admin-notes/search/**
+            - Method=POST,GET,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
+          metadata:
+            auth-roles:
+              - admin-diar
+        - id: profiles-admin-therapist-read
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/private/profiles/**
+            - Method=GET
+          metadata:
+            auth-roles:
+              - admin-diar
+              - therapist-diar
         - id: gamification-manager-principal
           uri: http://gamification-manager
           predicates:
@@ -49,35 +50,43 @@ spring:
             - Method=POST,GET
           filters:
             - AddPrincipalToPathFilter
+        - id: gamification-manager-web
+          uri: http://gamification-manager-web
+          predicates:
+            - Path=/api/v1/web/**, /api/v1/gamification-manager-web/**
+            - Method=GET
+          filters:
+            - AddPrincipalToPathFilter
+        - id: gamification-manager-web-principal-post
+          uri: http://gamification-manager-web
+          predicates:
+            - Path=/api/v1/web/commands/client/me/**
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
         - id: gamification-manager-admin
           uri: http://gamification-manager
           predicates:
-            - Path=/api/v1/cards/**, /api/v1/cards, /api/v1/tasks/**, /api/v1/tasks, /api/v1/categories/**, /api/v1/categories, /api/v1/task-executions/**
-            - Method=POST,PATCH,DELETE,GET
-          metadata:
-            auth-roles:
-              - admin-diar
-        - id: gamification-manager-therapist
-          uri: http://gamification-manager
-          predicates:
-            - Path=/api/v1/posts/**
+            - Path=/api/v1/cards/**, /api/v1/cards, /api/v1/tasks, /api/v1/tasks/*, /api/v1/categories/**, /api/v1/categories
             - Method=POST,PATCH,DELETE
           metadata:
             auth-roles:
               - admin-diar
-              - therapist-diar
+        - id: gamification-manager-web-admin
+          uri: http://gamification-manager-web
+          predicates:
+            - Path=/api/v1/web/cards/**, /api/v1/web/cards, /api/v1/web/tasks,  /api/v1/web/tasks/**, /api/v1/web/admin/**
+            - Method=POST,PATCH,DELETE
+          metadata:
+            auth-roles:
+              - admin-diar
         - id: gamification-manager
           uri: http://gamification-manager
           predicates:
-            - Path=/api/v1/cards/**, /api/v1/posts/**, /api/v1/tasks/**, /api/v1/categories/**, /api/v1/gamification-manager/**
+            - Path=/api/v1/cards/**, /api/v1/tasks/**, /api/v1/categories/**, /api/v1/gamification-manager/**, /api/v1/todo/**, /api/v1/task-executions/**
             - Method=GET
-        - id: descriptions
-          uri: http://gamification-manager
-          predicates:
-            - Path=/api/v1/*/*/description
-            - Method=GET,PUT,PATCH
           filters:
-            - RewritePath=/api/v1/(?<entity>.*)/(?<path>.*)/description, /api/v1/description//$\{path}/
+            - AddPrincipalToPathFilter
         - id: keycloak-admin-adapter
           uri: http://keycloak-admin-adapter
           predicates:
@@ -94,7 +103,6 @@ spring:
           metadata:
             auth-roles:
               - admin-diar
-              - therapist-diar
         - id: achievements-admin
           uri: http://achievements-manager
           predicates:
@@ -109,6 +117,8 @@ spring:
           predicates:
             - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-scheduled/**, /api/v1/step-user/**, /api/v1/achievements-step/**, /api/v1/achievements-step, /api/v1/achievement-user/**, /api/v1/achievements-manager/api-doc
             - Method=GET
+          filters:
+            - AddPrincipalToPathFilter
         - id: statistics
           uri: http://statistics
           predicates:
@@ -116,27 +126,31 @@ spring:
             - Method=GET
           filters:
             - AddPrincipalToPathFilter
-#            API GW security impl should be corrected
-#        - id: statistics-admin
-#          uri: http://statistics
-#          order: 1
-#          predicates:
-#            - Path=/api/v1/statistics/presence/**
-#            - Method=GET
-#          metadata:
-#            auth-roles:
-#              - admin-diar
-#              - therapist-diar
         - id: multimedia
           uri: http://multimedia-manager
           predicates:
             - Path=/api/v1/multimedia, /api/v1/multimedia/**, /api/v1/multimedia-manager/**
-        - id: data-aggregator
-          uri: http://data-aggregator
+        - id: notification-service
+          uri: http://notification-service
           predicates:
-            - Path=/api/v1/mapp/**, /api/v1/data-aggregator/api-doc
-            - Method=GET
+            - Path=/api/v1/notifications/me/device-token, /api/v1/notifications, /api/v1/emails, /api/v1/notification-service/api-doc
+            - Method=POST,GET
           filters:
             - AddPrincipalToPathFilter
+        - id: payments-manager
+          uri: http://payments-manager
+          predicates:
+            - Path=/api/v1/notifications/nets, /api/v1/payments/**, /api/v1/payments-manager/api-doc
+            - Method=POST,GET
+          filters:
+            - AddPrincipalToPathFilter
+        - id: openapi
+          uri: http://api-gateway
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /api/v1//$\{path}/api-doc
+
+
 keycloak-client:
   server-url: https://authentication-dev.thehousehealth.com/auth

@@ -65,6 +65,6 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.type.mapping: profile:com.agenatech.gamificationmanager.client.kafka.consumer.payload.UserProfile
-        bootstrap.servers: b-1.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.agenatech-dev.9cindp.c2.kafka.eu-north-1.amazonaws.com:9094
+        bootstrap.servers: b-1.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094
         security.protocol: SSL
         session.timeout.ms: 45000

@@ -7,34 +7,12 @@ profiles:
   path: api/v1/profiles
 gamification-manager:
   url: http://localhost:8080
-  path: api/v1/aggregate/gm/home
-achievements-manager:
-  url: http://localhost:8182
-  path: api/v1/achievement-user/list
-
-spring:
-  cache:
-    type: redis
-    redis:
-      cache-null-values: false
-      time-to-live: 40000
-  redis:
-    #    ssl: true
-    redisson:
-      config: |
-        singleServerConfig:
-          address: "redis://localhost:6379"
+  path: api/v1/tasks/aggregate/home
 
 logging:
   level:
-    com.house: INFO
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 10000
-        readTimeout: 10000
-        loggerLevel: BASIC
+    com.house: DEBUG
+    reactor.netty.http.client.HttpClient: DEBUG
 
 springdoc.api-docs.path: /api/v1/data-aggregator/api-doc
 

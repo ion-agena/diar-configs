@@ -8,6 +8,7 @@ security-constraints:
     - /webjars/swagger-ui/**
     - /swagger-ui**
     - /v3/api-docs/**
+    - /api/v1/notifications/nets
 
 cors:
   allowedOrigins: "*"
@@ -117,8 +118,8 @@ keycloak-client:
 
 logging:
   level:
-    org.springframework.cloud.gateway: INFO
-    reactor.netty.http.client: INFO
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
 
 springdoc:
   packages-to-scan: com.agenatech
@@ -128,14 +129,18 @@ springdoc:
       - statistics-admin
       - profiles-principal
       - profiles-therapist
+      - profiles-admin
+      - profiles-admin-therapist-read
       - gamification-manager-principal
       - gamification-manager-admin
+      - gamification-manager-web-admin
       - gamification-manager-therapist
-      - gamification-manager-commands-client
+      - gamification-manager-web-principal-post
       - keycloak-admin-adapter-therapist-admin
       - statistics-admin
       - openapi
       - descriptions
+      - notification-service-principal
 
 health:
   config:
