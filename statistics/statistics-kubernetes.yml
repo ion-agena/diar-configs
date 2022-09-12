@@ -25,7 +25,7 @@ spring:
   datasource:
     url: jdbc:postgresql://database-prod-1.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/statistics-manager?ssl=false
     username: postgres
-    password: '{cipher}343c6565adc705290de2fc08085115b01920d8a9bc7bf5d745f64270d16f175e587ad17756561b5824053f6af8d71fac'
+    password: '{cipher}2bbb2a04c46cec92488258782db047783ab20a46483bd31d5396b63359c9322e19f58976f80abf5bcb58d7734ced5121'
     hikari:
       connection-timeout: 20000
 
