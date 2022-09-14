@@ -87,6 +87,7 @@ logging:
   level:
     com.agenatech: DEBUG
     org.springframework.cache: TRACE
+feign.client.config.default.loggerLevel: full
 
 health:
   config:

@@ -91,10 +91,13 @@ multimedia:
   bulk-url: /api/v1/multimedia/bulk
 
 springdoc.api-docs.path: /api/v1/gamification-manager/api-doc
+
 logging:
   level:
     com.agenatech: DEBUG
     org.springframework.cache: TRACE
+feign.client.config.default.loggerLevel: full
+
 health:
   config:
     enabled: false
