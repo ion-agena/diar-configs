@@ -24,6 +24,15 @@ app:
   push:
     enabled: false
 
+management:
+  health:
+    show-details: always
+    probes.enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
 logging:
   level:
     com.agenatech: DEBUG

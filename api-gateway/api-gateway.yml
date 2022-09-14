@@ -145,3 +145,7 @@ springdoc:
 health:
   config:
     enabled: false
+
+management:
+  health:
+    probes.enabled: true

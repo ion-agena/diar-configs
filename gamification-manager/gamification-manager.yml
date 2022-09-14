@@ -80,6 +80,9 @@ spring:
         basic.auth.credentials.source: USER_INFO
 
 management:
+  health:
+    show-details: always
+    probes.enabled: true
   endpoints:
     web:
       exposure:
