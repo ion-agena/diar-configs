@@ -90,14 +90,14 @@ spring:
         - id: keycloak-admin-adapter
           uri: http://keycloak-admin-adapter
           predicates:
-            - Path=/api/v1/sso/accounts/me, /api/v1/keycloak-admin-adapter/api-doc
-            - Method=GET,DELETE
+            - Path=/api/v1/keycloak-admin-adapter/api-doc
+            - Method=GET
           filters:
             - AddPrincipalToPathFilter
         - id: keycloak-admin-adapter-therapist-admin
           uri: http://keycloak-admin-adapter
           predicates:
-            - Path=/api/v1/sso/me/create-account-profile, /api/v1/sso/admin/accounts/**
+            - Path=/api/v1/sso/me/create-account-profile, /api/v1/sso/admin/**
           filters:
             - AddPrincipalToPathFilter
           metadata:

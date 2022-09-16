@@ -55,7 +55,14 @@ spring:
         security.protocol: SASL_SSL
         session.timeout.ms: 45000
 
-management.endpoints.web.exposure.include: '*'
+management:
+  health:
+    show-details: always
+    probes.enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 springdoc.api-docs.path: /api/v1/statistics/api-doc
 

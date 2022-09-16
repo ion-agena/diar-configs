@@ -84,6 +84,9 @@ multimedia:
   bulk-url: /api/v1/multimedia/bulk
 
 management:
+  health:
+    show-details: always
+    probes.enabled: true
   endpoints:
     web:
       exposure:
@@ -94,6 +97,7 @@ logging:
   level:
     com.agenatech: DEBUG
     org.springframework.cache: TRACE
+feign.client.config.default.loggerLevel: full
 
 health:
   config:
