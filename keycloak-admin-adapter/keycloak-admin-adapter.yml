@@ -7,6 +7,7 @@ auth-server:
   cli-token-uri: auth/realms/master/protocol/openid-connect/token
   users-uri: auth/admin/realms/${keycloak-client.realm}/users
   email-actions-uri: auth/admin/realms/${keycloak-client.realm}/users/{id}/execute-actions-email
+  therapist-group-name: therapist-group
 keycloak-client:
   server-url: https://auth-dev.thehousehealth.com
   realm: diar
@@ -14,7 +15,6 @@ profiles:
   url: http://localhost:8989
   path: api/v1/profiles
   therapist-path: api/v1/therapist-profiles
-  therapist-group-name: therapist-group
 
 management:
   health:
