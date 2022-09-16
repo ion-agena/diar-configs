@@ -14,6 +14,7 @@ profiles:
   url: http://localhost:8989
   path: api/v1/profiles
   therapist-path: api/v1/therapist-profiles
+  therapist-group-name: therapist-group
 
 management:
   health:
