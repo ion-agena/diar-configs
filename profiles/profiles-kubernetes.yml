@@ -42,6 +42,7 @@ spring:
         generate_statistics: true
         cache.redisson:
           entity.expiration.max_idle_time: 604800000
+          config: redisson-prod.yml
 
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     show-sql: true
