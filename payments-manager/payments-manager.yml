@@ -16,7 +16,7 @@ spring:
         spring.json.type.mapping: payment:com.thehouse.paymentsmanager.model.HouseEvent
 
 env:
-  url: https://api-qa.thehousehealth.com
+  url: https://api.thehousehealth.com
 
 nets:
   url: https://test.api.dibspayment.eu
@@ -24,7 +24,7 @@ nets:
   secret: '{cipher}0878f01685712ba3770c088cf8380516184180b2722d3ef066cfbb16602411097c87e2a4e4a88622bca8b94cfaacba6ec8b56f4f8b3db882f3f49272bc5edbe35e82ed82edbb6c3a0fea741c27685d94'
   terms-url:  https://testtest.com
   webhook-url: /api/v1/notifications/nets
-  checkout-url: https://api-qa.thehousehealth.com
+  checkout-url: https://api.thehousehealth.com
 
 products:
   price-net: 500
