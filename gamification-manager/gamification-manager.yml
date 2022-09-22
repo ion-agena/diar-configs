@@ -93,6 +93,9 @@ multimedia:
   path: /api/v1/multimedia
   bulk-url: /api/v1/multimedia/bulk
 
+program:
+  archived-step: 100
+
 springdoc.api-docs.path: /api/v1/gamification-manager/api-doc
 
 logging:
