@@ -4,9 +4,9 @@ spring.servlet.multipart:
   max-request-size: 100MB
 
 amazon:
-  accessKey: '{cipher}8b34d9002a6d8db02f5e5cd30fb74fca943971b175b3020b37d600deed181e1a704f7f48b3b8c207124cfb12b462eb5c'
-  secretKey: '{cipher}452a92ea8ad6d7181a36f0e5864523a571f67c6ae8a4041d1c9dd8bbb524a3e9179d5f26d32d1c38ed901d25da61f26f3b53d26819f1146c12d31857745f9ca4'
-  bucketName: diar-se-qa-multimedia-manager
+  accessKey: '{cipher}267a139684749b795f676e07413bf838da929ca4818abe612ab004b4a3820fa52d0d9acdc2a577c6a03ed3b14a2e9551'
+  secretKey: '{cipher}ce189944c70856a8a6a2923c1f8494fe2d17c926340490e299584ab2077b99a5ef2cb005ec6551d54791c390271644361103a93cc71e6f18e3e35224541f3971'
+  bucketName: diar-se-multimedia-manager
   region: eu-north-1
 springdoc.api-docs.path: /api/v1/multimedia/api-doc
 management.endpoints.web.exposure.include: '*'
