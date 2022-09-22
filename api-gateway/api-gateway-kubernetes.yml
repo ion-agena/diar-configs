@@ -153,4 +153,4 @@ spring:
 
 
 keycloak-client:
-  server-url: https://authentication-dev.thehousehealth.com/auth
+  server-url: https://auth.thehousehealth.com/auth
