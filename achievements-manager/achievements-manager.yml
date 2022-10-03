@@ -44,6 +44,10 @@ spring:
         security.protocol: SASL_SSL
         session.timeout.ms: 45000
 
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
 achievements.chunk.size: 100
 
 management:
