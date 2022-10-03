@@ -7,6 +7,6 @@ achievements:
   cron: 0 0 6 * * *
 todos-mgr:
   url: http://gamification-manager
-  caches-path: /commands/clean-daily-caches
+  caches-path: api/v1/commands/clean-daily-caches
   caches-cron: '@midnight'
 
