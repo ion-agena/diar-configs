@@ -52,7 +52,7 @@ spring:
       ddl-auto: update
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
       cache:
-        use_second_level_cache: false
+        use_second_level_cache: true
         factory_class: org.redisson.hibernate.RedissonRegionFactory
         redisson:
           fallback: true
