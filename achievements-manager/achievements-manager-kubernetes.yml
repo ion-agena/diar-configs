@@ -24,7 +24,7 @@ spring:
       initial-pool-size: 1
       connection-timeout: 20000
   cache:
-    type: redis
+    type: none
     redis:
       max-idle-time: 604800000
   redis:
