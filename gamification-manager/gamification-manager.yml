@@ -18,7 +18,7 @@ spring:
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
 
   cache:
-    type: redis
+    type: none
     expiration:
       tasks-by-category-step:
         max-idle-time: 30000
