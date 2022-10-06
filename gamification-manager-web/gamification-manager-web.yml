@@ -56,6 +56,10 @@ spring:
       name: card-reply
       replicas: 2
       partitions: 3
+    step.topic:
+      name: step-update-request
+      replicas: 2
+      partitions: 3
     consumer:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
