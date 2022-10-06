@@ -4,8 +4,6 @@ server:
 spring:
   data.rest.base-path: api/v1/web
 
-  autoconfigure.exclude: none
-
   datasource:
     url: jdbc:postgresql://localhost:5432/gamificaton-manager-web?ssl=false
     username: user
