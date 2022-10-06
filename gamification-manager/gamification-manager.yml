@@ -3,6 +3,12 @@ server:
   connection-timeout: 5s
 spring:
   data.rest.base-path: api/v1
+
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.redisson.spring.starter.RedissonAutoConfiguration
+
   datasource:
     url: jdbc:postgresql://localhost:5432/gamificaton-manager?ssl=false
     username: user
