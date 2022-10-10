@@ -3,6 +3,7 @@ server:
   connection-timeout: 5s
 spring:
   data.rest.base-path: api/v1
+
   datasource:
     url: jdbc:postgresql://localhost:5432/gamificaton-manager?ssl=false
     username: user

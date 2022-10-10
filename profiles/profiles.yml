@@ -78,6 +78,7 @@ springdoc.api-docs.path: /api/v1/profiles/api-doc
 logging:
   level:
     com.agenatech: DEBUG
+feign.client.config.default.loggerLevel: full
 
 health:
   config:
