@@ -36,7 +36,7 @@ spring:
       tasks-executions-by-user:
         max-idle-time: 30000
         ttl: 0
-      step-description:
+      user-data:
         max-idle-time: 30000
         ttl: 0
 
