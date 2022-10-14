@@ -8,12 +8,24 @@ amazon:
   secretKey: '{cipher}ce189944c70856a8a6a2923c1f8494fe2d17c926340490e299584ab2077b99a5ef2cb005ec6551d54791c390271644361103a93cc71e6f18e3e35224541f3971'
   bucketName: diar-se-multimedia-manager
   region: eu-north-1
+
 springdoc.api-docs.path: /api/v1/multimedia/api-doc
-management.endpoints.web.exposure.include: '*'
+
+management:
+  health:
+    show-details: always
+    probes.enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
 logging.level:
   com.agenatech: DEBUG
+
 health:
   config:
     enabled: false
+
 sentry:
   dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927

@@ -5,12 +5,8 @@ achievements:
   url: http://achievements-manager
   run-scheduler-path: api/v1/commands/scheduler-run
   cron: 0 0 6 * * *
-gamification-mgr:
+todos-mgr:
   url: http://gamification-manager
-#  executions:
-#    cleanup-path: /commands/clean-finished-execution-data
-#    cron: 0 0 3 * * *
-  clear-caches:
-    path: /commands/clean-daily-caches
-    cron: '@midnight'
+  caches-path: api/v1/commands/clean-daily-caches
+  caches-cron: '@midnight'
 

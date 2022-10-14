@@ -3,6 +3,7 @@ server:
   connection-timeout: 5s
 spring:
   data.rest.base-path: api/v1
+
   datasource:
     url: jdbc:postgresql://localhost:5432/gamificaton-manager?ssl=false
     username: user
@@ -35,7 +36,7 @@ spring:
       tasks-executions-by-user:
         max-idle-time: 30000
         ttl: 0
-      step-description:
+      user-data:
         max-idle-time: 30000
         ttl: 0
 
@@ -80,6 +81,9 @@ spring:
         basic.auth.credentials.source: USER_INFO
 
 management:
+  health:
+    show-details: always
+    probes.enabled: true
   endpoints:
     web:
       exposure:
@@ -90,11 +94,17 @@ multimedia:
   path: /api/v1/multimedia
   bulk-url: /api/v1/multimedia/bulk
 
+program:
+  archived-step: 100
+
 springdoc.api-docs.path: /api/v1/gamification-manager/api-doc
+
 logging:
   level:
     com.agenatech: DEBUG
     org.springframework.cache: TRACE
+feign.client.config.default.loggerLevel: full
+
 health:
   config:
     enabled: false

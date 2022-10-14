@@ -2,6 +2,7 @@ server:
   forward-headers-strategy: framework
   connection-timeout: 5s
   port: 8182
+
 spring:
   data.rest.base-path: api/v1
   datasource:
@@ -43,19 +44,31 @@ spring:
         security.protocol: SASL_SSL
         session.timeout.ms: 45000
 
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
 achievements.chunk.size: 100
+
 management:
+  health:
+    show-details: always
+    probes.enabled: true
   endpoints:
     web:
       exposure:
         include: '*'
+
 springdoc.api-docs.path: /api/v1/achievements-manager/api-doc
+
 sentry:
   dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
+
 logging:
   level:
     com.agenatech: DEBUG
     org.springframework.cache: TRACE
+
 health:
   config:
     enabled: false

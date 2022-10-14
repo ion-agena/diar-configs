@@ -21,7 +21,7 @@ spring:
       tasks-executions-by-user:
         max-idle-time: 604800000
         ttl: 0
-      step-description:
+      user-data:
         max-idle-time: 1210000000
         ttl: 0
       cards-by-task:

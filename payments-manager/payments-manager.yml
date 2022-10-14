@@ -35,6 +35,9 @@ products:
 springdoc.api-docs.path: /api/v1/payments-manager/api-doc
 
 management:
+  health:
+    show-details: always
+    probes.enabled: true
   endpoints:
     web:
       exposure:

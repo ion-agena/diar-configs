@@ -7,20 +7,34 @@ auth-server:
   cli-token-uri: auth/realms/master/protocol/openid-connect/token
   users-uri: auth/admin/realms/${keycloak-client.realm}/users
   email-actions-uri: auth/admin/realms/${keycloak-client.realm}/users/{id}/execute-actions-email
+  therapist-group-name: therapist-group
 keycloak-client:
   server-url: https://auth-dev.agenadev.com
   realm: diar
 profiles:
   url: http://localhost:8989
   path: api/v1/profiles
+  therapist-path: api/v1/therapist-profiles
+
+management:
+  health:
+    show-details: always
+    probes.enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 springdoc.api-docs.path: /api/v1/keycloak-admin-adapter/api-doc
+
 logging:
   level:
     com.agenatech: DEBUG
     reactor.netty.http.client.HttpClient: DEBUG
+
 health:
   config:
     enabled: false
+
 sentry:
   dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
