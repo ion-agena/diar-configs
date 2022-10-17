@@ -56,7 +56,7 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
 #        spring.json.add.type.headers: false
-        spring.json.type.mapping: reply:com.agenatech.gamificationmanagerweb.model.ExecutedCard,step:com.agenatech.gamificationmanagerweb.model.payload.StepUpdateDto
+        spring.json.type.mapping: reply:com.agenatech.gamificationmanagerweb.model.ExecutedCard,profile:com.agenatech.gamificationmanagerweb.kafka.consumer.payload.UserProfile
     topic:
       name: card-reply
       replicas: 2
