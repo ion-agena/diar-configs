@@ -55,14 +55,14 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.add.type.headers: false
-#        spring.json.type.mapping: reply:com.agenatech.gamificationmanagerweb.model.ExecutedCard,step:com.agenatech.gamificationmanagerweb.model.payload.StepUpdateDto
+#        spring.json.add.type.headers: false
+        spring.json.type.mapping: reply:com.agenatech.gamificationmanagerweb.model.ExecutedCard,step:com.agenatech.gamificationmanagerweb.model.payload.StepUpdateDto
     topic:
       name: card-reply
       replicas: 2
       partitions: 3
-    step.topic:
-      name: step-update-request
+    profiles-topic:
+      name: user-profile
       replicas: 2
       partitions: 3
     consumer:
@@ -73,7 +73,7 @@ spring:
       profiles-topic.name: user-profile
       properties:
         spring.json.trusted.packages: "*"
-#        spring.json.type.mapping: profile:com.agenatech.gamificationmanagerweb.kafka.consumer.payload.UserProfile
+        spring.json.type.mapping: profile:com.agenatech.gamificationmanagerweb.kafka.consumer.payload.UserProfile
         bootstrap.servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
         security.protocol: SSL
         session.timeout.ms: 45000
