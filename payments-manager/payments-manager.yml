@@ -13,7 +13,8 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.type.mapping: payment:com.thehouse.paymentsmanager.model.HouseEvent
+        spring.json.add.type.headers: false
+#        spring.json.type.mapping: payment:com.thehouse.paymentsmanager.model.HouseEvent
 
 env:
   url: https://api-dev.thehousehealth.com
