@@ -11,7 +11,8 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.type.mapping: profile:com.agenatech.solutions.profiles.model.UserProfile
+        spring.json.add.type.headers: false
+#        spring.json.type.mapping: profile:com.agenatech.solutions.profiles.model.UserProfile
     topic:
       name: user-profile
       replicas: 2
