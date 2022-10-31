@@ -13,7 +13,7 @@ spring:
       properties:
         spring.json.type.mapping: user-achievement:com.agenatech.common.dto.UserAchievement
       achievements.topic:
-        name: user-achievements
+        name: user-achievement
         replicas: 2
         partitions: 3
     consumer:
