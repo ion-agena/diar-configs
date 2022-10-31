@@ -3,6 +3,16 @@ server:
 spring:
   kafka:
     enabled: true
+    producer:
+      bootstrap-servers: b-1.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkadev.ew7c9m.c2.kafka.eu-north-1.amazonaws.com:9094
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.type.mapping: user-achievement:com.agenatech.common.dto.UserAchievement
+      achievements.topic:
+        name: user-achievements
+        replicas: 2
+        partitions: 3
     consumer:
       group-id: profiles-achievements
       auto-offset-reset: earliest

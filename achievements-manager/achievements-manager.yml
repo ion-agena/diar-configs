@@ -28,7 +28,7 @@ spring:
         singleServerConfig:
           address: "redis://localhost:6379"
   kafka:
-    enabled: true
+    enabled: false
     consumer:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
