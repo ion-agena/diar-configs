@@ -18,11 +18,10 @@ spring:
 app:
   email:
     enabled: true
-#    default-email: "ion@thehousehealth.com"
     default-email: "no-reply@thehousehealth.com"
   portal-user-link: "https://therapist-portal-dev.thehousehealth.com/#/clients/details/"
   push:
-    enabled: false
+    enabled: true
 
 management:
   health:
