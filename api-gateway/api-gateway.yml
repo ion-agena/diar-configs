@@ -20,9 +20,9 @@ cors:
 spring:
   cloud:
     gateway:
-      httpclient:
-        connect-timeout: 3000
-        response-timeout: 7s
+#      httpclient:
+#        connect-timeout: 3000
+#        response-timeout: 7s
       forwarded:
         enabled: true
       x-forwarded:
