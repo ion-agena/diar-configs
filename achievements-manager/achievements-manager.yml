@@ -37,7 +37,7 @@ spring:
       profiles-topic.name: user-profile
       properties:
         spring.json.trusted.packages: "*"
-        spring.json.type.mapping: profile:com.agenatech.achievementsmanager.client.kafka.payload.UserProfile
+        spring.json.type.mapping: profile:com.agenatech.common.dto.UserProfile
         sasl:
           mechanism: PLAIN
         bootstrap.servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092

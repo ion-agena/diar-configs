@@ -33,7 +33,7 @@ spring:
 
   # Producer properties
   kafka:
-    enabled: true
+    enabled: false
     bootstrap-servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
     properties:
       security.protocol: SASL_SSL
@@ -63,6 +63,10 @@ calendly:
 notifications:
   url: http://notification-service
   email-url: /api/v1/emails/relapse
+
+program:
+  url: http://localhost:9897
+  users-program-data-url: /api/v1/web/user-program-data/search/by-ids
 
 management:
   health:

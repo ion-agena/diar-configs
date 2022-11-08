@@ -75,11 +75,19 @@ spring:
         - id: gamification-manager-web-admin
           uri: http://gamification-manager-web
           predicates:
-            - Path=/api/v1/web/cards/**, /api/v1/web/cards, /api/v1/web/tasks,  /api/v1/web/tasks/**, /api/v1/web/admin/**
+            - Path=/api/v1/web/cards/**, /api/v1/web/cards, /api/v1/web/tasks,  /api/v1/web/tasks/**, /api/v1/web/programs,  /api/v1/web/programs/**, /api/v1/web/admin/**
             - Method=POST,PATCH,DELETE
           metadata:
             auth-roles:
               - admin-diar
+        - id: gamification-manager-web-therapist
+          uri: http://gamification-manager-web
+          predicates:
+            - Path=/api/v1/web/therapist/**
+            - Method=POST
+          metadata:
+            auth-roles:
+              - therapist-diar
         - id: gamification-manager
           uri: http://gamification-manager
           predicates:

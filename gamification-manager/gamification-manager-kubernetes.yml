@@ -1,4 +1,8 @@
 spring:
+
+  liquibase:
+    enabled: false
+
   datasource:
     url: jdbc:postgresql://database-qa-1.co7q08si9fnn.eu-north-1.rds.amazonaws.com:5432/gamification-manager?ssl=false
     username: postgres
@@ -23,7 +27,7 @@ spring:
       tasks-executions-by-user:
         max-idle-time: 604800000
         ttl: 0
-      step-description:
+      user-data:
         max-idle-time: 1210000000
         ttl: 0
       cards-by-task:
@@ -66,7 +70,7 @@ spring:
       profiles-topic.name: user-profile
       properties:
         spring.json.trusted.packages: "*"
-        spring.json.type.mapping: profile:com.agenatech.gamificationmanager.client.kafka.consumer.payload.UserProfile
+        spring.json.type.mapping: profile:com.agenatech.common.dto.UserProfile
         bootstrap.servers: b-1.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094
         security.protocol: SSL
         session.timeout.ms: 45000
