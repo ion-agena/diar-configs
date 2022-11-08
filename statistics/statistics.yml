@@ -48,7 +48,7 @@ spring:
         group-id: statistics
       properties:
         spring.json.trusted.packages: "*"
-        spring.json.type.mapping: reply:com.agenatech.statistics.model.ExecutedCard
+        spring.json.type.mapping: reply:com.agenatech.common.dto.ExecutedCard
         sasl:
           mechanism: PLAIN
         bootstrap.servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
