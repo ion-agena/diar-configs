@@ -64,6 +64,10 @@ notifications:
   url: http://notification-service
   email-url: /api/v1/emails/relapse
 
+program:
+  url: http://localhost:9897
+  users-program-data-url: /api/v1/web/user-program-data/search/by-ids
+
 management:
   health:
     show-details: always
