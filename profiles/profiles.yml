@@ -67,6 +67,8 @@ notifications:
 program:
   url: http://localhost:9897
   users-program-data-url: /api/v1/web/user-program-data/search/by-ids
+  user-program-data-url: /api/v1/web/user-program-data/search/by-id
+  user-program-data-basic-url: /api/v1/web/user-program-data/{id}
 
 management:
   health:
