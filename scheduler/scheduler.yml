@@ -12,7 +12,7 @@ todos-mgr:
 notifications:
   url: http://localhost:8080
   old-data-path: /api/v1/notifications/old
-  caches-cron: '@monthly'
+  old-data-cron: '@monthly'
 
 logging:
   level:
