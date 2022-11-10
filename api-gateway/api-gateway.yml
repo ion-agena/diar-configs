@@ -134,9 +134,11 @@ springdoc:
       - gamification-manager-principal
       - gamification-manager-admin
       - gamification-manager-web-admin
+      - gamification-manager-web-therapist
       - gamification-manager-therapist
       - gamification-manager-web-principal-post
       - keycloak-admin-adapter-therapist-admin
+      - keycloak-admin-adapter-principal
       - statistics-admin
       - openapi
       - descriptions

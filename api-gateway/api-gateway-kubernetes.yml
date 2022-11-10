@@ -102,6 +102,12 @@ spring:
             - Method=GET
           filters:
             - AddPrincipalToPathFilter
+        - id: keycloak-admin-adapter-principal
+          uri: http://keycloak-admin-adapter
+          predicates:
+            - Path=/api/v1/sso/accounts/me
+          filters:
+            - AddPrincipalToPathFilter
         - id: keycloak-admin-adapter-therapist-admin
           uri: http://keycloak-admin-adapter
           predicates:
