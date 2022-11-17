@@ -31,6 +31,9 @@ spring:
       user-step:
         max-idle-time: 1210000000
         ttl: 0
+      user-program:
+        max-idle-time: 1210000000
+        ttl: 0
 
   redis:
     ssl: true
