@@ -28,6 +28,10 @@ app:
     enabled: true
   remove-notifications-after-months: 6
 
+program:
+  url: http://localhost:9897
+  user-program-data-basic-url: /api/v1/web/user-program-data/{id}
+
 localization:
   new-achievement:
     eng: New Achievement
