@@ -147,17 +147,18 @@ spring:
         - id: notification-service
           uri: http://notification-service
           predicates:
-            - Path=/api/v1/notifications/me/device-token, /api/v1/notifications/push, /api/v1/notifications/*/seen, /api/v1/notifications/me, /api/v1/emails, /api/v1/notification-service/api-doc
+            - Path=/api/v1/notifications/**, /api/v1/emails, /api/v1/notification-service/api-doc
+            #            - Path=/api/v1/notifications/me/device-token, /api/v1/notifications/push, /api/v1/notifications/*/seen, /api/v1/notifications/me, /api/v1/emails, /api/v1/notification-service/api-doc
             - Method=POST,GET
           filters:
             - AddPrincipalToPathFilter
-        - id: payments-manager
-          uri: http://payments-manager
-          predicates:
-            - Path=/api/v1/notifications/nets, /api/v1/payments/**, /api/v1/payments-manager/api-doc
-            - Method=POST,GET
-          filters:
-            - AddPrincipalToPathFilter
+#        - id: payments-manager
+#          uri: http://payments-manager
+#          predicates:
+#            - Path=/api/v1/notifications/nets, /api/v1/payments/**, /api/v1/payments-manager/api-doc
+#            - Method=POST,GET
+#          filters:
+#            - AddPrincipalToPathFilter
         - id: openapi
           uri: http://api-gateway
           predicates:
