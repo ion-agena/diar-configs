@@ -9,10 +9,15 @@ todos-mgr:
   url: http://localhost:8080
   caches-path: api/v1/commands/clean-daily-caches
   caches-cron: '@midnight'
+notifications:
+  url: http://localhost:8080
+  old-data-path: /api/v1/notifications/old
+  old-data-cron: '@monthly'
 
 logging:
   level:
     com.agenatech: DEBUG
+    reactor.netty.http.client.HttpClient: DEBUG
 
 health:
   config:

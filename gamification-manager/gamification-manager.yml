@@ -5,7 +5,7 @@ spring:
   data.rest.base-path: api/v1
 
   liquibase:
-    enabled: false
+    enabled: true
 
   datasource:
     url: jdbc:postgresql://localhost:5432/gamificaton-manager?ssl=false
@@ -39,7 +39,7 @@ spring:
       tasks-executions-by-user:
         max-idle-time: 30000
         ttl: 0
-      step-description:
+      user-data:
         max-idle-time: 30000
         ttl: 0
 

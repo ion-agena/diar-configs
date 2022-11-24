@@ -3,10 +3,7 @@ server:
 
 achievements:
   url: http://achievements-manager
-  run-scheduler-path: api/v1/commands/scheduler-run
-  cron: 0 0 14 * * *
 todos-mgr:
   url: http://gamification-manager
-  caches-path: api/v1/commands/clean-daily-caches
-  caches-cron: '@midnight'
-
+notifications:
+  url: http://notification-service
