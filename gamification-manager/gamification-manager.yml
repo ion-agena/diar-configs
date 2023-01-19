@@ -98,7 +98,9 @@ multimedia:
   bulk-url: /api/v1/multimedia/bulk
 
 program:
+  url: http://localhost:9090
   archived-step: 100
+  assign-program-url: /api/v1/web/admin/assign-program
 
 springdoc.api-docs.path: /api/v1/gamification-manager/api-doc
 
