@@ -69,6 +69,7 @@ program:
   users-program-data-url: /api/v1/web/user-program-data/search/by-ids
   user-program-data-url: /api/v1/web/user-program-data/search/by-id
   user-program-data-basic-url: /api/v1/web/user-program-data/{id}
+  assign-program-url: /api/v1/web/admin/assign-program
 
 management:
   health:
