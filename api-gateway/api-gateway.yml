@@ -70,7 +70,7 @@ spring:
         - id: gamification-manager
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/achievements/**, /api/v1/cards/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/tasks/**, /api/v1/gamification-manager/**, /api/v1/save-user-data, /api/v1/save-user-data/me/update-step/{step}, /api/v1/me/assign-program/{programId}, /api/v1/me/assign-program/{programId}, /api/v1/me/remove-tasks, /api/v1/{userId}/cancel-active-tasks
+            - Path=/api/v1/achievements/**, /api/v1/cards/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/tasks/**, /api/v1/gamification-manager/**, /api/v1/process-user-data/**
             - Method=GET,POST,PUT,DELETE
           filters:
             - AddPrincipalToPathFilter

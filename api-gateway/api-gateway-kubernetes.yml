@@ -129,8 +129,8 @@ spring:
         - id: achievements-manager
           uri: http://achievements-manager
           predicates:
-            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-scheduled/**, /api/v1/step-user/**, /api/v1/achievements-step/**, /api/v1/achievements-step, /api/v1/achievement-user/**, /api/v1/achievements-manager/api-doc
-            - Method=GET
+            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-scheduled/**, /api/v1/step-user/**, /api/v1/achievements-step/**, /api/v1/achievements-step, /api/v1/achievement-user/**, /api/v1/achievements-manager/api-doc, /api/v1/schedule-user-achievements, /api/v1/me/update-step/{step}, /api/v1/me/delete-data, /api/v1/me/{achievementId}/send-achievement
+            - Method=GET,POST,PUT,DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: statistics
@@ -147,7 +147,7 @@ spring:
         - id: notification-service
           uri: http://notification-service
           predicates:
-            - Path=/api/v1/notifications/**, /api/v1/emails, /api/v1/notification-service/api-doc
+            - Path=/api/v1/notifications/**, /api/v1/emails, /api/v1/notification-service/api-doc, /api/v1/send-user-achievement
             #            - Path=/api/v1/notifications/me/device-token, /api/v1/notifications/push, /api/v1/notifications/*/seen, /api/v1/notifications/me, /api/v1/emails, /api/v1/notification-service/api-doc
             - Method=POST,GET
           filters:
