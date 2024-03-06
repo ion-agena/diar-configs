@@ -94,6 +94,11 @@ health:
 sentry:
   dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
 
+gamification:
+  url: http://localhost:8080
+  save-user-data: api/v1/save-user-data
+  remove-user-tasks: api/v1/{userId}/remove-tasks
+
 
 
 
