@@ -96,8 +96,9 @@ sentry:
 
 gamification:
   url: http://localhost:8080
-  save-user-data: api/v1/save-user-data
-  remove-user-tasks: api/v1/{userId}/remove-tasks
+  save-user-data: api/v1/process-user-data/SAVE_USER_DATA
+  remove-user-tasks: api/v1/process-user-data/REMOVE_USER_TASKS?userId={userId}
+
 
 
 
