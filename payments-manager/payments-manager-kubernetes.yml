@@ -4,3 +4,6 @@ spring:
 nets:
   checkout-url: https://client-portal-qa.thehousehealth.com/onboarding
 
+events:
+  client-payments:
+    profiles-url: http://profiles/api/v1/update-payment-status

@@ -55,3 +55,7 @@ health:
 
 sentry:
   dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
+
+events:
+  client-payments:
+    profiles-url: http://localhost:8989/api/v1/update-payment-status

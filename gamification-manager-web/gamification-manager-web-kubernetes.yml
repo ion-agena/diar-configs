@@ -79,3 +79,11 @@ spring:
         bootstrap.servers: b-1.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094
         security.protocol: SSL
         session.timeout.ms: 45000
+
+events:
+  card-reply:
+    url: http://statistics/api/v1/statistics/cards/executed
+  user-profile:
+    achievements-url: http://achievements-manager/api/v1/schedule-user-achievements
+    statistics-url: http://statistics/api/v1/statistics/users
+    gamification-url: http://gamification-manager/api/v1/process-user-data

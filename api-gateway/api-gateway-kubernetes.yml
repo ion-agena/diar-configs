@@ -136,7 +136,7 @@ spring:
         - id: statistics
           uri: http://statistics
           predicates:
-            - Path=/api/v1/statistics/presence/**, /api/v1/statistics/api-doc
+            - Path=/api/v1/statistics/**, /api/v1/statistics/api-doc
             - Method=GET
           filters:
             - AddPrincipalToPathFilter
