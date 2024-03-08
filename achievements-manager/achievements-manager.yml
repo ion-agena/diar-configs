@@ -73,8 +73,9 @@ health:
   config:
     enabled: false
 
-notifications:
-  url: http://notification-service
-  send-user-achievement: /api/v1/send-user-achievement
-
-
+events:
+  user-profile:
+    notifications:
+      url: http://notification-service
+      endpoints:
+        user-achievement: /api/v1/send-user-achievement
