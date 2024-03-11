@@ -83,7 +83,7 @@ spring:
 events:
   card-reply:
     statistics:
-      url:  http://statistics
+      url: http://statistics
       endpoints:
         executed: /api/v1/statistics/cards/executed
   user-profile:
@@ -92,7 +92,7 @@ events:
       endpoints:
         schedule: /api/v1/{userId}/achievements/schedule
     statistics:
-      url:  http://statistics
+      url: http://statistics
       endpoints:
         users: /api/v1/statistics/users
     gamification:
