@@ -124,7 +124,7 @@ events:
     achievements:
       url: http://localhost:8182
       endpoints:
-        schedule: /api/v1/profiles/user-achievements
+        schedule: /api/v1/{userId}/achievements/schedule
     statistics:
       url: http://localhost:8078
       endpoints:
