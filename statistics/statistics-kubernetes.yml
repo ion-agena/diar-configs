@@ -3,7 +3,7 @@ server:
 
 spring:
   kafka:
-    enabled: true
+    enabled: false
     consumer:
       group-id: cards-execution-statistics
       auto-offset-reset: earliest

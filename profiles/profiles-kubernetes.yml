@@ -2,7 +2,7 @@ server:
   port: 8989
 spring:
   kafka:
-    enabled: true
+    enabled: false
     bootstrap-servers: b-1.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094
     properties:
       security.protocol: SSL

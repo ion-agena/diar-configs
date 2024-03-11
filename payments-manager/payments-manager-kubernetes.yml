@@ -1,6 +1,6 @@
 spring:
   kafka:
-    enabled: true
+    enabled: false
 nets:
   checkout-url: https://client-portal-qa.thehousehealth.com/onboarding
 
