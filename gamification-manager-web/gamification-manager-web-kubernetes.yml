@@ -82,8 +82,20 @@ spring:
 
 events:
   card-reply:
-    url: http://statistics/api/v1/statistics/cards/executed
+    statistics:
+      url:  http://statistics
+      endpoints:
+        executed: /api/v1/statistics/cards/executed
   user-profile:
-    achievements-url: http://achievements-manager/api/v1/schedule-user-achievements
-    statistics-url: http://statistics/api/v1/statistics/users
-    gamification-url: http://gamification-manager/api/v1/user-data
+    achievements:
+      url: http://achievements-manager
+      endpoints:
+        schedule: /api/v1/profiles/user-achievements
+    statistics:
+      url:  http://statistics
+      endpoints:
+        users: /api/v1/statistics/users
+    gamification:
+      url: http://gamification-manager
+      endpoints:
+        user-data: /api/v1/user-data
