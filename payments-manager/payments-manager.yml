@@ -58,4 +58,7 @@ sentry:
 
 events:
   client-payments:
-    profiles-url: http://localhost:8989/api/v1/update-payment-status
+    profiles:
+      url: http://localhost:8989
+      endpoints:
+        status: /api/v1/profiles/payment-status
