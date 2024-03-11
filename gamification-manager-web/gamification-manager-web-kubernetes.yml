@@ -90,7 +90,7 @@ events:
     achievements:
       url: http://achievements-manager
       endpoints:
-        schedule: /api/v1/profiles/user-achievements
+        schedule: /api/v1/{userId}/achievements/schedule
     statistics:
       url:  http://statistics
       endpoints:
