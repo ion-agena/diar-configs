@@ -120,4 +120,4 @@ events:
   user-profile:
     achievements-url: http://localhost:8182/api/v1/schedule-user-achievements
     statistics-url: http://localhost:8078/api/v1/statistics/users
-    gamification-url: http://localhost:8081/api/v1/process-user-data
+    gamification-url: http://localhost:8081/api/v1/user-data

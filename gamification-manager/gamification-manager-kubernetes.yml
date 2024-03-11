@@ -75,6 +75,9 @@ spring:
         security.protocol: SSL
         session.timeout.ms: 45000
 
-statistics:
-  url: http://statistics
-  send-executed-card: /api/v1/statistics/cards/executed
+events:
+  card-reply:
+    statistics:
+      url: http://statistics
+      endpoints:
+        executed-card: /api/v1/statistics/cards/executed

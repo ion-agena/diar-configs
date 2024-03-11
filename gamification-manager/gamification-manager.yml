@@ -114,6 +114,9 @@ health:
 sentry:
   dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
 
-statistics:
-  url: http://localhost:8078
-  send-executed-card: /api/v1/statistics/cards/executed
+events:
+  card-reply:
+    statistics:
+      url: http://localhost:8078
+      endpoints:
+        executed-card: /api/v1/statistics/cards/executed
