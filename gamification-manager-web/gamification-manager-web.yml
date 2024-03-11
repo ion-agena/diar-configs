@@ -116,8 +116,20 @@ sentry:
 
 events:
   card-reply:
-    url: http://localhost:8078/api/v1/statistics/cards/executed
+    statistics:
+      url: http://localhost:8078
+      endpoints:
+        executed: /api/v1/statistics/cards/executed
   user-profile:
-    achievements-url: http://localhost:8182/api/v1/schedule-user-achievements
-    statistics-url: http://localhost:8078/api/v1/statistics/users
-    gamification-url: http://localhost:8081/api/v1/user-data
+    achievements:
+      url: http://localhost:8182
+      endpoints:
+        schedule: /api/v1/profiles/user-achievements
+    statistics:
+      url: http://localhost:8078
+      endpoints:
+        users: /api/v1/statistics/users
+    gamification:
+      url: http://localhost:8081
+      endpoints:
+        user-data: /api/v1/user-data
