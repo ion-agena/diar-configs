@@ -97,7 +97,7 @@ sentry:
 events:
   user-profile:
     gamification:
-      url: http://localhost:8081
+      url: http://localhost:8080
       endpoints:
-        save-user-data: /api/v1/user-data/save
-        remove-user-tasks: /api/v1/user-data/tasks/remove?userId={userId}
+        save-user-data: api/v1/user-data/SAVE_USER_DATA
+        remove-user-tasks: api/v1/user-data/REMOVE_USER_TASKS?userId={userId}

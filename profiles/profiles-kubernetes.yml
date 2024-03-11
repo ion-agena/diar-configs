@@ -70,8 +70,6 @@ spring:
             - "redis://qa-002.7rswex.0001.eun1.cache.amazonaws.com:6379"
             - "redis://qa-003.7rswex.0001.eun1.cache.amazonaws.com:6379"
 
-
-
 notifications:
   url: http://notification-service
 
@@ -87,5 +85,5 @@ events:
     gamification:
       url: http://gamification-manager
       endpoints:
-        save-user-data: /api/v1/user-data/save
-        remove-user-tasks: /api/v1/user-data/tasks/remove?userId={userId}
+        save-user-data: api/v1/user-data/SAVE_USER_DATA
+        remove-user-tasks: api/v1/user-data/REMOVE_USER_TASKS?userId={userId}
