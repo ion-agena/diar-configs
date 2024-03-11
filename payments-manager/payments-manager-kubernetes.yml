@@ -7,4 +7,6 @@ nets:
 events:
   client-payments:
     profiles:
-      url: http://profiles/api/v1/profiles/payment-status
+      url: http://profiles
+      endpoints:
+        status: /api/v1/profiles/payment-status
