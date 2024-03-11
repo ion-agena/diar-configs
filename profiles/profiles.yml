@@ -101,7 +101,3 @@ events:
       endpoints:
         save-user-data: /api/v1/user-data/save
         remove-user-tasks: /api/v1/user-data/tasks/remove?userId={userId}
-
-
-
-
