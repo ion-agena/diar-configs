@@ -78,4 +78,4 @@ events:
     notifications:
       url: http://notification-service
       endpoints:
-        user-achievement: /api/v1/send-user-achievement
+        user-achievement: /api/v1/user-achievements
