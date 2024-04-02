@@ -47,7 +47,8 @@ spring:
         - id: profiles
           uri: http://localhost:8095
           predicates:
-            - Path=/api/v1/profiles/*/*, /api/v1/profiles/api-doc
+            - Path=/api/v1/profiles/*/*, /api/v1/profiles/api-doc, /api/v1/update-payment-status/{action}
+            - Method=GET,PUT,POST
         - id: openapi
           uri: http://localhost:8081
           predicates:
@@ -69,7 +70,10 @@ spring:
         - id: gamification-manager
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/achievements/**, /api/v1/cards/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/tasks/**, /api/v1/gamification-manager/**
+            - Path=/api/v1/achievements/**, /api/v1/cards/**, /api/v1/posts/**, /api/v1/steps/**, /api/v1/tasks/**, /api/v1/gamification-manager/**, /api/v1/user-data/**
+            - Method=GET,POST,PUT,DELETE
+          filters:
+            - AddPrincipalToPathFilter
         - id: descriptions
           uri: http://localhost:8080
           predicates:

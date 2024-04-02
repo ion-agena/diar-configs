@@ -113,3 +113,23 @@ health:
 
 sentry:
   dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
+
+events:
+  card-reply:
+    statistics:
+      url: http://localhost:8078
+      endpoints:
+        executed: /api/v1/statistics/cards/executed
+  user-profile:
+    achievements:
+      url: http://localhost:8182
+      endpoints:
+        schedule: /api/v1/{userId}/achievements/schedule
+    statistics:
+      url: http://localhost:8078
+      endpoints:
+        users: /api/v1/statistics/users
+    gamification:
+      url: http://localhost:8081
+      endpoints:
+        user-data: /api/v1/user-data

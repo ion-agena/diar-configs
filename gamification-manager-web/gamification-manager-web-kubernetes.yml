@@ -49,7 +49,7 @@ spring:
             - "redis://qa-003.7rswex.0001.eun1.cache.amazonaws.com:6379"
 
   kafka:
-    enabled: true
+    enabled: false
     bootstrap-servers: b-1.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094
     properties:
       security.protocol: SSL
@@ -79,3 +79,23 @@ spring:
         bootstrap.servers: b-1.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094, b-2.kafkaqa.238fcd.c2.kafka.eu-north-1.amazonaws.com:9094
         security.protocol: SSL
         session.timeout.ms: 45000
+
+events:
+  card-reply:
+    statistics:
+      url: http://statistics
+      endpoints:
+        executed: /api/v1/statistics/cards/executed
+  user-profile:
+    achievements:
+      url: http://achievements-manager
+      endpoints:
+        schedule: /api/v1/{userId}/achievements/schedule
+    statistics:
+      url: http://statistics
+      endpoints:
+        users: /api/v1/statistics/users
+    gamification:
+      url: http://gamification-manager
+      endpoints:
+        user-data: /api/v1/user-data
