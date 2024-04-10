@@ -1,12 +1,6 @@
 spring:
   kafka:
-    enabled: false
+    enabled: true
 nets:
   checkout-url: https://client-portal-qa.thehousehealth.com/onboarding
 
-events:
-  client-payments:
-    profiles:
-      url: http://profiles
-      endpoints:
-        status: /api/v1/profiles/payment-status

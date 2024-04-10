@@ -1,5 +1,4 @@
 server:
-  port: 8081
   forward-headers-strategy: framework
   connection-timeout: 5s
 spring:
@@ -114,10 +113,3 @@ health:
     enabled: false
 sentry:
   dsn: https://d2c258aaf0194406a4b684d5671b8f03@o1167145.ingest.sentry.io/6257927
-
-events:
-  card-reply:
-    statistics:
-      url: http://localhost:8078
-      endpoints:
-        executed-card: /api/v1/statistics/cards/executed

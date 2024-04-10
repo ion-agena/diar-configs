@@ -9,7 +9,7 @@ spring:
       connection-timeout: 20000
 
   kafka:
-    enabled: false
+    enabled: true
     consumer:
       group-id: notification-service
       auto-offset-reset: earliest
