@@ -12,8 +12,8 @@ spring:
         - id: profiles
           uri: http://profiles
           predicates:
-            - Path=/api/v1/profiles/**,/api/v1/therapist-profiles/**,/api/v1/programs/assign-program/**
-            - Method=GET,PUT,POST
+            - Path=/api/v1/profiles, /api/v1/profiles/*/*, /api/v1/therapist-profiles/**, /api/v1/therapist-profiles, /api/v1/programs/assign-program, /api/v1/profiles/api-doc
+            - Method=GET
         - id: profiles-therapist
           uri: http://profiles
           predicates:
@@ -91,8 +91,8 @@ spring:
         - id: gamification-manager
           uri: http://gamification-manager
           predicates:
-            - Path=/api/v1/cards/**, /api/v1/tasks/**, /api/v1/categories/**, /api/v1/gamification-manager/**, /api/v1/todo/**, /api/v1/task-executions/**, /api/v1/user-data/**
-            - Method=GET,POST,PUT,DELETE
+            - Path=/api/v1/cards/**, /api/v1/tasks/**, /api/v1/categories/**, /api/v1/gamification-manager/**, /api/v1/todo/**, /api/v1/task-executions/**
+            - Method=GET
           filters:
             - AddPrincipalToPathFilter
         - id: keycloak-admin-adapter
@@ -129,14 +129,14 @@ spring:
         - id: achievements-manager
           uri: http://achievements-manager
           predicates:
-            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-scheduled/**, /api/v1/step-user/**, /api/v1/achievements-step/**, /api/v1/achievements-step, /api/v1/achievement-user/**, /api/v1/achievements-manager/api-doc, /api/v1/me/**
-            - Method=GET,POST,PUT,DELETE
+            - Path=/api/v1/achievements/**, /api/v1/achievements-monthly/**, /api/v1/achievements-weekly/**, /api/v1/achievements-scheduled/**, /api/v1/step-user/**, /api/v1/achievements-step/**, /api/v1/achievements-step, /api/v1/achievement-user/**, /api/v1/achievements-manager/api-doc
+            - Method=GET
           filters:
             - AddPrincipalToPathFilter
         - id: statistics
           uri: http://statistics
           predicates:
-            - Path=/api/v1/statistics/**, /api/v1/statistics/api-doc
+            - Path=/api/v1/statistics/presence/**, /api/v1/statistics/api-doc
             - Method=GET
           filters:
             - AddPrincipalToPathFilter
@@ -147,7 +147,7 @@ spring:
         - id: notification-service
           uri: http://notification-service
           predicates:
-            - Path=/api/v1/notifications/**, /api/v1/emails, /api/v1/notification-service/api-doc, /api/v1/user-achievements
+            - Path=/api/v1/notifications/**, /api/v1/emails, /api/v1/notification-service/api-doc
             #            - Path=/api/v1/notifications/me/device-token, /api/v1/notifications/push, /api/v1/notifications/*/seen, /api/v1/notifications/me, /api/v1/emails, /api/v1/notification-service/api-doc
             - Method=POST,GET
           filters:
