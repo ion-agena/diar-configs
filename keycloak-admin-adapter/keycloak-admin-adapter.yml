@@ -9,8 +9,8 @@ auth-server:
   email-actions-uri: auth/admin/realms/${keycloak-client.realm}/users/{id}/execute-actions-email
   therapist-group-name: therapist-group
 keycloak-client:
-  server-url: https://auth-qa.thehousehealth.com
-  realm: diar
+  server-url: http://auth.thehouserehab.com/
+  realm: thehouse
 profiles:
   url: http://localhost:8989
   path: api/v1/profiles
