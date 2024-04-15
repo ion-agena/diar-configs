@@ -168,4 +168,4 @@ spring:
 
 
 keycloak-client:
-  server-url: https://auth-qa.thehousehealth.com/auth
+  server-url: http://auth.thehouserehab.com/
